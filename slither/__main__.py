@@ -60,12 +60,11 @@ def process_single(target, args, detector_classes, printer_classes):
     Returns:
         list(result), int: Result list and number of contracts analyzed
     """
-    print(args)
     ast = "--ast-compact-json"
     if args.legacy_ast:
         ast = "--ast-json"
     slither = Slither(target, ast_format=ast, **vars(args))
-
+    
     return _process(slither, detector_classes, printer_classes)
 
 
@@ -114,7 +113,8 @@ def _process(slither, detector_classes, printer_classes):
 
     else:
         printer_results = slither.run_printers()
-        printer_results = [x for x in printer_results if x]  # remove empty results
+        # print(printer_results)
+    #     printer_results = [x for x in printer_results if x]  # remove empty results
         results_printers.extend(printer_results)
 
     return slither, results_detectors, results_printers, analyzed_contracts_count
@@ -280,272 +280,10 @@ def parse_args(detector_classes, printer_classes):  # pylint: disable=too-many-s
     usage += "\t- 0x.. // a contract on mainet\n"
     usage += f"\t- NETWORK:0x.. // a contract on a different network. Supported networks: {','.join(x[:-1] for x in SUPPORTED_NETWORK)}\n"
 
-    parser = argparse.ArgumentParser(
-        description="For usage information, see https://github.com/crytic/slither/wiki/Usage",
-        usage=usage,
-    )
-
-    parser.add_argument("filename", help=argparse.SUPPRESS)
-
-    cryticparser.init(parser)
-
-    parser.add_argument(
-        "--version",
-        help="displays the current version",
-        version=require("slither-analyzer")[0].version,
-        action="version",
-    )
-
-    group_detector = parser.add_argument_group("Detectors")
-    group_printer = parser.add_argument_group("Printers")
-    group_misc = parser.add_argument_group("Additional options")
-
-    group_detector.add_argument(
-        "--detect",
-        help="Comma-separated list of detectors, defaults to all, "
-        "available detectors: {}".format(", ".join(d.ARGUMENT for d in detector_classes)),
-        action="store",
-        dest="detectors_to_run",
-        default=defaults_flag_in_config["detectors_to_run"],
-    )
-
-    group_printer.add_argument(
-        "--print",
-        help="Comma-separated list fo contract information printers, "
-        "available printers: {}".format(", ".join(d.ARGUMENT for d in printer_classes)),
-        action="store",
-        dest="printers_to_run",
-        default=defaults_flag_in_config["printers_to_run"],
-    )
-
-    group_detector.add_argument(
-        "--list-detectors",
-        help="List available detectors",
-        action=ListDetectors,
-        nargs=0,
-        default=False,
-    )
-
-    group_printer.add_argument(
-        "--list-printers",
-        help="List available printers",
-        action=ListPrinters,
-        nargs=0,
-        default=False,
-    )
-
-    group_detector.add_argument(
-        "--exclude",
-        help="Comma-separated list of detectors that should be excluded",
-        action="store",
-        dest="detectors_to_exclude",
-        default=defaults_flag_in_config["detectors_to_exclude"],
-    )
-
-    group_detector.add_argument(
-        "--exclude-dependencies",
-        help="Exclude results that are only related to dependencies",
-        action="store_true",
-        default=defaults_flag_in_config["exclude_dependencies"],
-    )
-
-    group_detector.add_argument(
-        "--exclude-optimization",
-        help="Exclude optimization analyses",
-        action="store_true",
-        default=defaults_flag_in_config["exclude_optimization"],
-    )
-
-    group_detector.add_argument(
-        "--exclude-informational",
-        help="Exclude informational impact analyses",
-        action="store_true",
-        default=defaults_flag_in_config["exclude_informational"],
-    )
-
-    group_detector.add_argument(
-        "--exclude-low",
-        help="Exclude low impact analyses",
-        action="store_true",
-        default=defaults_flag_in_config["exclude_low"],
-    )
-
-    group_detector.add_argument(
-        "--exclude-medium",
-        help="Exclude medium impact analyses",
-        action="store_true",
-        default=defaults_flag_in_config["exclude_medium"],
-    )
-
-    group_detector.add_argument(
-        "--exclude-high",
-        help="Exclude high impact analyses",
-        action="store_true",
-        default=defaults_flag_in_config["exclude_high"],
-    )
-
-    group_detector.add_argument(
-        "--show-ignored-findings",
-        help="Show all the findings",
-        action="store_true",
-        default=defaults_flag_in_config["show_ignored_findings"],
-    )
-
-    group_misc.add_argument(
-        "--json",
-        help='Export the results as a JSON file ("--json -" to export to stdout)',
-        action="store",
-        default=defaults_flag_in_config["json"],
-    )
-
-    group_misc.add_argument(
-        "--sarif",
-        help='Export the results as a SARIF JSON file ("--sarif -" to export to stdout)',
-        action="store",
-        default=defaults_flag_in_config["sarif"],
-    )
-
-    group_misc.add_argument(
-        "--json-types",
-        help="Comma-separated list of result types to output to JSON, defaults to "
-        + f'{",".join(output_type for output_type in DEFAULT_JSON_OUTPUT_TYPES)}. '
-        + f'Available types: {",".join(output_type for output_type in JSON_OUTPUT_TYPES)}',
-        action="store",
-        default=defaults_flag_in_config["json-types"],
-    )
-
-    group_misc.add_argument(
-        "--zip",
-        help="Export the results as a zipped JSON file",
-        action="store",
-        default=defaults_flag_in_config["zip"],
-    )
-
-    group_misc.add_argument(
-        "--zip-type",
-        help=f'Zip compression type. One of {",".join(ZIP_TYPES_ACCEPTED.keys())}. Default lzma',
-        action="store",
-        default=defaults_flag_in_config["zip_type"],
-    )
-
-    group_misc.add_argument(
-        "--markdown-root",
-        help="URL for markdown generation",
-        action="store",
-        default="",
-    )
-
-    group_misc.add_argument(
-        "--disable-color",
-        help="Disable output colorization",
-        action="store_true",
-        default=defaults_flag_in_config["disable_color"],
-    )
-
-    group_misc.add_argument(
-        "--filter-paths",
-        help="Comma-separated list of paths for which results will be excluded",
-        action="store",
-        dest="filter_paths",
-        default=defaults_flag_in_config["filter_paths"],
-    )
-
-    group_misc.add_argument(
-        "--triage-mode",
-        help="Run triage mode (save results in slither.db.json)",
-        action="store_true",
-        dest="triage_mode",
-        default=False,
-    )
-
-    group_misc.add_argument(
-        "--config-file",
-        help="Provide a config file (default: slither.config.json)",
-        action="store",
-        dest="config_file",
-        default="slither.config.json",
-    )
-
-    group_misc.add_argument(
-        "--solc-ast",
-        help="Provide the contract as a json AST",
-        action="store_true",
-        default=False,
-    )
-
-    group_misc.add_argument(
-        "--generate-patches",
-        help="Generate patches (json output only)",
-        action="store_true",
-        default=False,
-    )
-
-    # debugger command
-    parser.add_argument("--debug", help=argparse.SUPPRESS, action="store_true", default=False)
-
-    parser.add_argument("--markdown", help=argparse.SUPPRESS, action=OutputMarkdown, default=False)
-
-    group_misc.add_argument(
-        "--checklist", help=argparse.SUPPRESS, action="store_true", default=False
-    )
-
-    group_misc.add_argument("--checklist-limit", help=argparse.SUPPRESS, action="store", default="")
-
-    parser.add_argument(
-        "--wiki-detectors", help=argparse.SUPPRESS, action=OutputWiki, default=False
-    )
-
-    parser.add_argument(
-        "--list-detectors-json",
-        help=argparse.SUPPRESS,
-        action=ListDetectorsJson,
-        nargs=0,
-        default=False,
-    )
-
-    parser.add_argument(
-        "--legacy-ast",
-        help=argparse.SUPPRESS,
-        action="store_true",
-        default=defaults_flag_in_config["legacy_ast"],
-    )
-
-    parser.add_argument(
-        "--skip-assembly",
-        help=argparse.SUPPRESS,
-        action="store_true",
-        default=defaults_flag_in_config["skip_assembly"],
-    )
-
-    parser.add_argument(
-        "--ignore-return-value",
-        help=argparse.SUPPRESS,
-        action="store_true",
-        default=defaults_flag_in_config["ignore_return_value"],
-    )
-
-    parser.add_argument(
-        "--perf",
-        help=argparse.SUPPRESS,
-        action="store_true",
-        default=False,
-    )
-
-    # if the json is splitted in different files
-    parser.add_argument("--splitted", help=argparse.SUPPRESS, action="store_true", default=False)
-
-    # Disable the throw/catch on partial analyses
-    parser.add_argument(
-        "--disallow-partial", help=argparse.SUPPRESS, action="store_true", default=False
-    )
-
-    if len(sys.argv) == 1:
-        parser.print_help(sys.stderr)
-        sys.exit(1)
-
-    args = parser.parse_args()
-    read_config_file(args)
-
+    args=argparse.Namespace(filename='files/test.sol', compile_force_framework=None, compile_remove_metadata=False, compile_custom_build=None, ignore_compile=False, solc='solc', solc_remaps=None, solc_args=None, solc_disable_warnings=False, solc_working_dir=None, solc_solcs_select=None, solc_solcs_bin=None, solc_standard_json=False, solc_force_legacy_json=False, truffle_ignore_compile=False, truffle_build_directory='build/contracts', truffle_version=None, truffle_overwrite_config=False, truffle_overwrite_version=None, embark_ignore_compile=False, embark_overwrite_config=False, dapp_ignore_compile=False, etherlime_ignore_compile=False, etherlime_compile_arguments=None, etherscan_only_source_code=False, etherscan_only_bytecode=False, etherscan_api_key=None, etherscan_export_dir='etherscan-contracts', waffle_ignore_compile=False, waffle_config_file=None, npx_disable=False, buidler_ignore_compile=False, buidler_cache_directory='cache', buidler_skip_directory_name_fix=False, hardhat_ignore_compile=False, hardhat_cache_directory='cache', hardhat_artifacts_directory='artifacts', detectors_to_run='all', printers_to_run='human-summary', list_detectors=False, list_printers=False, detectors_to_exclude=None, exclude_dependencies=False, exclude_optimization=False, exclude_informational=False, exclude_low=False, exclude_medium=False, exclude_high=False, show_ignored_findings=False, json=None, sarif=None, json_types='detectors,printers', zip=None, zip_type='lzma', markdown_root='', disable_color=False, filter_paths=None, triage_mode=False, config_file='slither.config.json', solc_ast=False, generate_patches=False, debug=False, markdown=False, checklist=False, checklist_limit='', wiki_detectors=False, list_detectors_json=False, legacy_ast=False, skip_assembly=False, ignore_return_value=False, perf=False, splitted=False, disallow_partial=False)
+    
+    # args = parser.parse_args()
+    # read_config_file(args)
     args.filter_paths = parse_filter_paths(args)
 
     # Verify our json-type output is valid
@@ -626,9 +364,9 @@ def main():
     sys.setrecursionlimit(1500)
 
     detectors, printers = get_detectors_and_printers()
-
-    main_impl(all_detector_classes=detectors, all_printer_classes=printers)
-
+    
+    analyzed_result=main_impl(all_detector_classes=detectors, all_printer_classes=printers)
+    return analyzed_result
 
 # pylint: disable=too-many-statements,too-many-branches,too-many-locals
 def main_impl(all_detector_classes, all_printer_classes):
@@ -639,12 +377,12 @@ def main_impl(all_detector_classes, all_printer_classes):
     # Set logger of Slither to info, to catch warnings related to the arg parsing
     logger.setLevel(logging.INFO)
     args = parse_args(all_detector_classes, all_printer_classes)
-
+    
     cp: Optional[cProfile.Profile] = None
     if args.perf:
         cp = cProfile.Profile()
         cp.enable()
-
+    
     # Set colorization option
     set_colorization_enabled(not args.disable_color)
 
@@ -667,7 +405,6 @@ def main_impl(all_detector_classes, all_printer_classes):
 
     printer_classes = choose_printers(args, all_printer_classes)
     detector_classes = choose_detectors(args, all_detector_classes)
-
     default_log = logging.INFO if not args.debug else logging.DEBUG
 
     for (l_name, l_level) in [
@@ -719,6 +456,7 @@ def main_impl(all_detector_classes, all_printer_classes):
                     number_contracts,
                 ) = process_from_asts(filenames, args, detector_classes, printer_classes)
                 slither_instances.append(slither_instance)
+                
             else:
                 for filename in filenames:
                     (
@@ -731,8 +469,8 @@ def main_impl(all_detector_classes, all_printer_classes):
                     results_detectors += results_detectors_tmp
                     results_printers += results_printers_tmp
                     slither_instances.append(slither_instance)
-
-        # Rely on CryticCompile to discern the underlying type of compilations.
+        
+    #     # Rely on CryticCompile to discern the underlying type of compilations.
         else:
             (
                 slither_instances,
@@ -740,8 +478,9 @@ def main_impl(all_detector_classes, all_printer_classes):
                 results_printers,
                 number_contracts,
             ) = process_all(filename, args, detector_classes, printer_classes)
-
-        # Determine if we are outputting JSON
+            
+        return results_printers
+    #     # Determine if we are outputting JSON
         if outputting_json or outputting_zip or output_to_sarif:
             # Add our compilation information to JSON
             if "compilations" in args.json_types:
@@ -769,7 +508,7 @@ def main_impl(all_detector_classes, all_printer_classes):
             if "list-printers" in args.json_types:
                 _, printers = get_detectors_and_printers()
                 json_results["list-printers"] = output_printers_json(printers)
-
+        
         # Output our results to markdown if we wish to compile a checklist.
         if args.checklist:
             output_results_to_markdown(results_detectors, args.checklist_limit)
@@ -787,6 +526,7 @@ def main_impl(all_detector_classes, all_printer_classes):
                 len(detector_classes),
                 len(results_detectors),
             )
+            
         if args.ignore_return_value:
             return
 

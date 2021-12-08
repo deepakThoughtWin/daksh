@@ -338,7 +338,6 @@ class PrinterHumanSummary(AbstractPrinter):
             high,
         ) = self.get_detectors_result()
         txt += txt_detectors
-
         results["number_findings"] = {
             "optimization_issues": optimization,
             "informational_issues": info,
@@ -347,77 +346,77 @@ class PrinterHumanSummary(AbstractPrinter):
             "high_issues": high,
         }
         results["detectors"] = detectors_results
+        # print(results["number_findings"])
+        # libs = self._standard_libraries()
+        # if libs:
+        #     txt += f'\nUse: {", ".join(libs)}\n'
+        #     results["standard_libraries"] = [str(l) for l in libs]
 
-        libs = self._standard_libraries()
-        if libs:
-            txt += f'\nUse: {", ".join(libs)}\n'
-            results["standard_libraries"] = [str(l) for l in libs]
+        # ercs = self._ercs()
+        # if ercs:
+        #     txt += f'ERCs: {", ".join(ercs)}\n'
+        #     results["ercs"] = [str(e) for e in ercs]
 
-        ercs = self._ercs()
-        if ercs:
-            txt += f'ERCs: {", ".join(ercs)}\n'
-            results["ercs"] = [str(e) for e in ercs]
+        # table = MyPrettyTable(
+        #     ["Name", "# functions", "ERCS", "ERC20 info", "Complex code", "Features"]
+        # )
+        # for contract in self.slither.contracts_derived:
 
-        table = MyPrettyTable(
-            ["Name", "# functions", "ERCS", "ERC20 info", "Complex code", "Features"]
-        )
-        for contract in self.slither.contracts_derived:
+        #     if contract.is_from_dependency() or contract.is_test:
+        #         continue
 
-            if contract.is_from_dependency() or contract.is_test:
-                continue
+        #     is_complex = self.is_complex_code(contract)
+        #     number_functions = self._number_functions(contract)
+        #     ercs = ",".join(contract.ercs())
+        #     is_erc20 = contract.is_erc20()
+        #     erc20_info = ""
+        #     if is_erc20:
+        #         erc20_info += self.get_summary_erc20(contract)
 
-            is_complex = self.is_complex_code(contract)
-            number_functions = self._number_functions(contract)
-            ercs = ",".join(contract.ercs())
-            is_erc20 = contract.is_erc20()
-            erc20_info = ""
-            if is_erc20:
-                erc20_info += self.get_summary_erc20(contract)
+        #     features = "\n".join(
+        #         [name for name, to_print in self._get_features(contract).items() if to_print]
+        #     )
 
-            features = "\n".join(
-                [name for name, to_print in self._get_features(contract).items() if to_print]
-            )
+        #     table.add_row(
+        #         [
+        #             contract.name,
+        #             number_functions,
+        #             ercs,
+        #             erc20_info,
+        #             is_complex,
+        #             features,
+        #         ]
+        #     )
 
-            table.add_row(
-                [
-                    contract.name,
-                    number_functions,
-                    ercs,
-                    erc20_info,
-                    is_complex,
-                    features,
-                ]
-            )
+        # self.info(txt + "\n" + str(table))
 
-        self.info(txt + "\n" + str(table))
+        # results_contract = output.Output("")
+        # for contract in self.slither.contracts_derived:
+        #     if contract.is_test or contract.is_from_dependency():
+        #         continue
 
-        results_contract = output.Output("")
-        for contract in self.slither.contracts_derived:
-            if contract.is_test or contract.is_from_dependency():
-                continue
+        #     contract_d = {
+        #         "contract_name": contract.name,
+        #         "is_complex_code": self._is_complex_code(contract),
+        #         "is_erc20": contract.is_erc20(),
+        #         "number_functions": self._number_functions(contract),
+        #         "features": [
+        #             name for name, to_print in self._get_features(contract).items() if to_print
+        #         ],
+        #     }
+        #     if contract_d["is_erc20"]:
+        #         pause, mint_limited, race_condition_mitigated = self._get_summary_erc20(contract)
+        #         contract_d["erc20_pause"] = pause
+        #         if mint_limited is not None:
+        #             contract_d["erc20_can_mint"] = True
+        #             contract_d["erc20_mint_limited"] = mint_limited
+        #         else:
+        #             contract_d["erc20_can_mint"] = False
+        #         contract_d["erc20_race_condition_mitigated"] = race_condition_mitigated
+        #     results_contract.add_contract(contract, additional_fields=contract_d)
 
-            contract_d = {
-                "contract_name": contract.name,
-                "is_complex_code": self._is_complex_code(contract),
-                "is_erc20": contract.is_erc20(),
-                "number_functions": self._number_functions(contract),
-                "features": [
-                    name for name, to_print in self._get_features(contract).items() if to_print
-                ],
-            }
-            if contract_d["is_erc20"]:
-                pause, mint_limited, race_condition_mitigated = self._get_summary_erc20(contract)
-                contract_d["erc20_pause"] = pause
-                if mint_limited is not None:
-                    contract_d["erc20_can_mint"] = True
-                    contract_d["erc20_mint_limited"] = mint_limited
-                else:
-                    contract_d["erc20_can_mint"] = False
-                contract_d["erc20_race_condition_mitigated"] = race_condition_mitigated
-            results_contract.add_contract(contract, additional_fields=contract_d)
+        # results["contracts"]["elements"] = results_contract.elements
 
-        results["contracts"]["elements"] = results_contract.elements
+        # json = self.generate_output(txt, additional_fields=results)
 
-        json = self.generate_output(txt, additional_fields=results)
-
-        return json
+        return results["number_findings"]

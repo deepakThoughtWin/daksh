@@ -193,7 +193,7 @@ class Slither(SlitherCore):  # pylint: disable=too-many-instance-attributes
         :return: List of registered printers outputs.
         """
 
-        return [p.output(self._crytic_compile.target).data for p in self._printers]
+        return [p.output(self._crytic_compile.target) for p in self._printers]
 
     @property
     def triage_mode(self):
