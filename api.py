@@ -1,13 +1,15 @@
 import os
+import sys
 
 import requests as request
 
 from config import ACTION, ADDRESS, API_KEY, MODULE
 from slither.__main__ import main
+from utils.args_parser import manual_human_summary_args
 from utils.versions import use_or_install
 
 save_path = 'files'
-filename = 'test.sol'
+filename = 'test_code.sol'
 
 
 def get_code(API_KEY,MODULE,ACTION,ADDRESS):
@@ -17,19 +19,26 @@ def get_code(API_KEY,MODULE,ACTION,ADDRESS):
   result = json_data['result'][0]
   content=result['SourceCode']
   version=result['CompilerVersion']
-  response={
-    'content':content,
-    'version':version
-  }
-  use_or_install(version,content)
-  return response
+  if content  == '':
+    print(f"API's response with address {ADDRESS} returns None")
+    print('Please try different address ..')
+    sys.exit(1)
+  else:
+    response={
+      'content':content,
+      'version':version
+    }
+    use_or_install(version,content)
+
+    return response
+
 
 def write_code(content,file_name,save_path):
   #function for writing code into file
   completeName = os.path.join(save_path, file_name)
   with open(completeName, "w") as file:
         file.write(str(content))
-        return 'Success'
+        return completeName
 
 
   
@@ -41,5 +50,6 @@ content=response['content']
 file = write_code(content,filename,save_path)
 
 #Run analyzer(updated slithir=> human_summary,__main__.py)
-analyzer=main()
-print(analyzer)
+filename_with_args=manual_human_summary_args(file)
+analysis_result=main(filename_with_args)
+print(analysis_result)

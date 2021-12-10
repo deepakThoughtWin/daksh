@@ -271,7 +271,7 @@ def parse_filter_paths(args):
     return []
 
 
-def parse_args(detector_classes, printer_classes):  # pylint: disable=too-many-statements
+def parse_args(detector_classes, printer_classes,filename_with_args):  # pylint: disable=too-many-statements
 
     usage = "slither target [flag]\n"
     usage += "\ntarget can be:\n"
@@ -280,7 +280,7 @@ def parse_args(detector_classes, printer_classes):  # pylint: disable=too-many-s
     usage += "\t- 0x.. // a contract on mainet\n"
     usage += f"\t- NETWORK:0x.. // a contract on a different network. Supported networks: {','.join(x[:-1] for x in SUPPORTED_NETWORK)}\n"
 
-    args=argparse.Namespace(filename='files/test.sol', compile_force_framework=None, compile_remove_metadata=False, compile_custom_build=None, ignore_compile=False, solc='solc', solc_remaps=None, solc_args=None, solc_disable_warnings=False, solc_working_dir=None, solc_solcs_select=None, solc_solcs_bin=None, solc_standard_json=False, solc_force_legacy_json=False, truffle_ignore_compile=False, truffle_build_directory='build/contracts', truffle_version=None, truffle_overwrite_config=False, truffle_overwrite_version=None, embark_ignore_compile=False, embark_overwrite_config=False, dapp_ignore_compile=False, etherlime_ignore_compile=False, etherlime_compile_arguments=None, etherscan_only_source_code=False, etherscan_only_bytecode=False, etherscan_api_key=None, etherscan_export_dir='etherscan-contracts', waffle_ignore_compile=False, waffle_config_file=None, npx_disable=False, buidler_ignore_compile=False, buidler_cache_directory='cache', buidler_skip_directory_name_fix=False, hardhat_ignore_compile=False, hardhat_cache_directory='cache', hardhat_artifacts_directory='artifacts', detectors_to_run='all', printers_to_run='human-summary', list_detectors=False, list_printers=False, detectors_to_exclude=None, exclude_dependencies=False, exclude_optimization=False, exclude_informational=False, exclude_low=False, exclude_medium=False, exclude_high=False, show_ignored_findings=False, json=None, sarif=None, json_types='detectors,printers', zip=None, zip_type='lzma', markdown_root='', disable_color=False, filter_paths=None, triage_mode=False, config_file='slither.config.json', solc_ast=False, generate_patches=False, debug=False, markdown=False, checklist=False, checklist_limit='', wiki_detectors=False, list_detectors_json=False, legacy_ast=False, skip_assembly=False, ignore_return_value=False, perf=False, splitted=False, disallow_partial=False)
+    args=filename_with_args
     
     # args = parser.parse_args()
     # read_config_file(args)
@@ -359,24 +359,24 @@ class FormatterCryticCompile(logging.Formatter):
 ###################################################################################
 
 
-def main():
+def main(filename_with_args=None):
     # Codebase with complex domninators can lead to a lot of SSA recursive call
     sys.setrecursionlimit(1500)
 
     detectors, printers = get_detectors_and_printers()
     
-    analyzed_result=main_impl(all_detector_classes=detectors, all_printer_classes=printers)
+    analyzed_result=main_impl(all_detector_classes=detectors, all_printer_classes=printers,filename_with_args=filename_with_args)
     return analyzed_result
 
 # pylint: disable=too-many-statements,too-many-branches,too-many-locals
-def main_impl(all_detector_classes, all_printer_classes):
+def main_impl(all_detector_classes, all_printer_classes,filename_with_args):
     """
     :param all_detector_classes: A list of all detectors that can be included/excluded.
     :param all_printer_classes: A list of all printers that can be included.
     """
     # Set logger of Slither to info, to catch warnings related to the arg parsing
     logger.setLevel(logging.INFO)
-    args = parse_args(all_detector_classes, all_printer_classes)
+    args = parse_args(all_detector_classes, all_printer_classes,filename_with_args)
     
     cp: Optional[cProfile.Profile] = None
     if args.perf:

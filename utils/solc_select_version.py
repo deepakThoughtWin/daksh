@@ -20,6 +20,7 @@ def current_version():
             print(
                 f"Version '{version}' not installed (set by {source}). Run `solc-select install {version}`."
             )
+            return None
             sys.exit(1)
     else:
         source = f"{solc_select_dir}/global-version"
@@ -31,8 +32,8 @@ def current_version():
             print(
                 "No solc version set. Run `solc-select use VERSION` or set SOLC_VERSION environment variable."
             )
-            return None
-    return (version, source)
+            return "Not Set"
+    return version
 
 
 def installed_versions():
@@ -58,6 +59,7 @@ def install_artifacts(versions):
         # which are not possible to compute without additional dependencies
         os.chmod(artifact_file, 0o775)
         print(f"Version '{version}' installed.")
+    return True
 
 
 def is_older_linux(version):
