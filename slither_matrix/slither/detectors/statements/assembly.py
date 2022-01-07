@@ -2,8 +2,8 @@
 Module detecting usage of inline assembly
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.core.cfg.node import NodeType
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.core.cfg.node import NodeType
 
 
 class Assembly(AbstractDetector):

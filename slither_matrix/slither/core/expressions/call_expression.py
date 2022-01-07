@@ -1,6 +1,6 @@
 from typing import Optional, List
 
-from slither.core.expressions.expression import Expression
+from slither_matrix.slither.core.expressions.expression import Expression
 
 
 class CallExpression(Expression):  # pylint: disable=too-many-instance-attributes

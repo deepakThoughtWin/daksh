@@ -1,7 +1,7 @@
-from slither.core.solidity_types.elementary_type import ElementaryType
-from slither.slithir.operations.call import Call
-from slither.slithir.operations.lvalue import OperationWithLValue
-from slither.slithir.utils.utils import is_valid_lvalue
+from slither_matrix.slither.core.solidity_types.elementary_type import ElementaryType
+from slither_matrix.slither.slithir.operations.call import Call
+from slither_matrix.slither.slithir.operations.lvalue import OperationWithLValue
+from slither_matrix.slither.slithir.utils.utils import is_valid_lvalue
 
 
 class NewElementaryType(Call, OperationWithLValue):

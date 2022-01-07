@@ -4,7 +4,7 @@
 from collections import defaultdict
 from typing import Union, Set, Dict, TYPE_CHECKING
 
-from slither.core.declarations import (
+from slither_matrix.slither.core.declarations import (
     Contract,
     Enum,
     Function,
@@ -13,9 +13,9 @@ from slither.core.declarations import (
     SolidityVariableComposed,
     Structure,
 )
-from slither.core.variables.variable import Variable
-from slither.slithir.operations import Index, OperationWithLValue, InternalCall
-from slither.slithir.variables import (
+from slither_matrix.slither.core.variables.variable import Variable
+from slither_matrix.slither.slithir.operations import Index, OperationWithLValue, InternalCall
+from slither_matrix.slither.slithir.variables import (
     Constant,
     LocalIRVariable,
     ReferenceVariable,
@@ -24,10 +24,10 @@ from slither.slithir.variables import (
     TemporaryVariableSSA,
     TupleVariableSSA,
 )
-from slither.core.solidity_types.type import Type
+from slither_matrix.slither.core.solidity_types.type import Type
 
 if TYPE_CHECKING:
-    from slither.core.compilation_unit import SlitherCompilationUnit
+    from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
 
 
 ###################################################################################

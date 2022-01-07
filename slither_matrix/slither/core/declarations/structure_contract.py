@@ -1,5 +1,5 @@
-from slither.core.children.child_contract import ChildContract
-from slither.core.declarations import Structure
+from slither_matrix.slither.core.children.child_contract import ChildContract
+from slither_matrix.slither.core.declarations import Structure
 
 
 class StructureContract(Structure, ChildContract):

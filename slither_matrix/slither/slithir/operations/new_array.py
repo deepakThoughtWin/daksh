@@ -1,6 +1,6 @@
-from slither.slithir.operations.lvalue import OperationWithLValue
-from slither.slithir.operations.call import Call
-from slither.core.solidity_types.type import Type
+from slither_matrix.slither.slithir.operations.lvalue import OperationWithLValue
+from slither_matrix.slither.slithir.operations.call import Call
+from slither_matrix.slither.core.solidity_types.type import Type
 
 
 class NewArray(Call, OperationWithLValue):

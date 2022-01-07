@@ -1,8 +1,8 @@
 import re
 
-from slither.core.compilation_unit import SlitherCompilationUnit
-from slither.formatters.exceptions import FormatError, FormatImpossible
-from slither.formatters.utils.patches import create_patch
+from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
+from slither_matrix.slither.formatters.exceptions import FormatError, FormatImpossible
+from slither_matrix.slither.formatters.utils.patches import create_patch
 
 
 def custom_format(compilation_unit: SlitherCompilationUnit, result):

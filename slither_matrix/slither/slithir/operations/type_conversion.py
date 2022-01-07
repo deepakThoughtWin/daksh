@@ -1,7 +1,7 @@
-from slither.core.declarations import Contract
-from slither.core.solidity_types.type import Type
-from slither.slithir.operations.lvalue import OperationWithLValue
-from slither.slithir.utils.utils import is_valid_lvalue, is_valid_rvalue
+from slither_matrix.slither.core.declarations import Contract
+from slither_matrix.slither.core.solidity_types.type import Type
+from slither_matrix.slither.slithir.operations.lvalue import OperationWithLValue
+from slither_matrix.slither.slithir.utils.utils import is_valid_lvalue, is_valid_rvalue
 
 
 class TypeConversion(OperationWithLValue):

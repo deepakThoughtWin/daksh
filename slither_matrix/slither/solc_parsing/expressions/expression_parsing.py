@@ -2,11 +2,11 @@ import logging
 import re
 from typing import Dict, TYPE_CHECKING, Optional, Union, List, Tuple
 
-from slither.core.declarations import Event, Enum, Structure
-from slither.core.declarations.contract import Contract
-from slither.core.declarations.function import Function
-from slither.core.declarations.function_contract import FunctionContract
-from slither.core.declarations.solidity_variables import (
+from slither_matrix.slither.core.declarations import Event, Enum, Structure
+from slither_matrix.slither.core.declarations.contract import Contract
+from slither_matrix.slither.core.declarations.function import Function
+from slither_matrix.slither.core.declarations.function_contract import FunctionContract
+from slither_matrix.slither.core.declarations.solidity_variables import (
     SOLIDITY_FUNCTIONS,
     SOLIDITY_VARIABLES,
     SOLIDITY_VARIABLES_COMPOSED,
@@ -15,46 +15,46 @@ from slither.core.declarations.solidity_variables import (
     SolidityVariableComposed,
     SolidityImportPlaceHolder,
 )
-from slither.core.expressions.assignment_operation import (
+from slither_matrix.slither.core.expressions.assignment_operation import (
     AssignmentOperation,
     AssignmentOperationType,
 )
-from slither.core.expressions.binary_operation import (
+from slither_matrix.slither.core.expressions.binary_operation import (
     BinaryOperation,
     BinaryOperationType,
 )
-from slither.core.expressions.call_expression import CallExpression
-from slither.core.expressions.conditional_expression import ConditionalExpression
-from slither.core.expressions.elementary_type_name_expression import ElementaryTypeNameExpression
-from slither.core.expressions.identifier import Identifier
-from slither.core.expressions.index_access import IndexAccess
-from slither.core.expressions.literal import Literal
-from slither.core.expressions.member_access import MemberAccess
-from slither.core.expressions.new_array import NewArray
-from slither.core.expressions.new_contract import NewContract
-from slither.core.expressions.new_elementary_type import NewElementaryType
-from slither.core.expressions.super_call_expression import SuperCallExpression
-from slither.core.expressions.super_identifier import SuperIdentifier
-from slither.core.expressions.tuple_expression import TupleExpression
-from slither.core.expressions.type_conversion import TypeConversion
-from slither.core.expressions.unary_operation import UnaryOperation, UnaryOperationType
-from slither.core.solidity_types import (
+from slither_matrix.slither.core.expressions.call_expression import CallExpression
+from slither_matrix.slither.core.expressions.conditional_expression import ConditionalExpression
+from slither_matrix.slither.core.expressions.elementary_type_name_expression import ElementaryTypeNameExpression
+from slither_matrix.slither.core.expressions.identifier import Identifier
+from slither_matrix.slither.core.expressions.index_access import IndexAccess
+from slither_matrix.slither.core.expressions.literal import Literal
+from slither_matrix.slither.core.expressions.member_access import MemberAccess
+from slither_matrix.slither.core.expressions.new_array import NewArray
+from slither_matrix.slither.core.expressions.new_contract import NewContract
+from slither_matrix.slither.core.expressions.new_elementary_type import NewElementaryType
+from slither_matrix.slither.core.expressions.super_call_expression import SuperCallExpression
+from slither_matrix.slither.core.expressions.super_identifier import SuperIdentifier
+from slither_matrix.slither.core.expressions.tuple_expression import TupleExpression
+from slither_matrix.slither.core.expressions.type_conversion import TypeConversion
+from slither_matrix.slither.core.expressions.unary_operation import UnaryOperation, UnaryOperationType
+from slither_matrix.slither.core.solidity_types import (
     ArrayType,
     ElementaryType,
     FunctionType,
     MappingType,
 )
-from slither.core.variables.variable import Variable
-from slither.exceptions import SlitherError
-from slither.solc_parsing.exceptions import ParsingError, VariableNotFound
-from slither.solc_parsing.solidity_types.type_parsing import UnknownType, parse_type
+from slither_matrix.slither.core.variables.variable import Variable
+from slither_matrix.slither.exceptions import SlitherError
+from slither_matrix.slither.solc_parsing.exceptions import ParsingError, VariableNotFound
+from slither_matrix.slither.solc_parsing.solidity_types.type_parsing import UnknownType, parse_type
 
 if TYPE_CHECKING:
-    from slither.core.expressions.expression import Expression
-    from slither.solc_parsing.declarations.function import FunctionSolc
-    from slither.solc_parsing.declarations.contract import ContractSolc
-    from slither.solc_parsing.slither_compilation_unit_solc import SlitherCompilationUnitSolc
-    from slither.core.compilation_unit import SlitherCompilationUnit
+    from slither_matrix.slither.core.expressions.expression import Expression
+    from slither_matrix.slither.solc_parsing.declarations.function import FunctionSolc
+    from slither_matrix.slither.solc_parsing.declarations.contract import ContractSolc
+    from slither_matrix.slither.solc_parsing.slither_compilation_unit_solc import SlitherCompilationUnitSolc
+    from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
 
 logger = logging.getLogger("ExpressionParsing")
 
@@ -230,9 +230,9 @@ def _find_variable_init(
     "SlitherCompilationUnit",
     "SlitherCompilationUnitSolc",
 ]:
-    from slither.solc_parsing.slither_compilation_unit_solc import SlitherCompilationUnitSolc
-    from slither.solc_parsing.declarations.contract import ContractSolc
-    from slither.solc_parsing.declarations.function import FunctionSolc
+    from slither_matrix.slither.solc_parsing.slither_compilation_unit_solc import SlitherCompilationUnitSolc
+    from slither_matrix.slither.solc_parsing.declarations.contract import ContractSolc
+    from slither_matrix.slither.solc_parsing.declarations.function import FunctionSolc
 
     direct_contracts: List[Contract]
     direct_functions_parser: List[FunctionSolc]
@@ -283,8 +283,8 @@ def find_variable(
     Enum,
     Structure,
 ]:
-    from slither.solc_parsing.declarations.function import FunctionSolc
-    from slither.solc_parsing.declarations.contract import ContractSolc
+    from slither_matrix.slither.solc_parsing.declarations.function import FunctionSolc
+    from slither_matrix.slither.solc_parsing.declarations.contract import ContractSolc
 
     # variable are looked from the contract declarer
     # functions can be shadowed, but are looked from the contract instance, rather than the contract declarer

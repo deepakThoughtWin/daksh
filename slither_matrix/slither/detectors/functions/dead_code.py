@@ -3,8 +3,8 @@ Module detecting dead code
 """
 from typing import List, Tuple
 
-from slither.core.declarations import Function, FunctionContract, Contract
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.core.declarations import Function, FunctionContract, Contract
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
 
 
 class DeadCode(AbstractDetector):

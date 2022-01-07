@@ -2,7 +2,7 @@ import logging
 from typing import List, TYPE_CHECKING, Union, Optional
 
 # pylint: disable= too-many-lines,import-outside-toplevel,too-many-branches,too-many-statements,too-many-nested-blocks
-from slither.core.declarations import (
+from slither_matrix.slither.core.declarations import (
     Contract,
     Enum,
     Event,
@@ -12,9 +12,9 @@ from slither.core.declarations import (
     SolidityVariableComposed,
     Structure,
 )
-from slither.core.declarations.function_contract import FunctionContract
-from slither.core.expressions import Identifier, Literal
-from slither.core.solidity_types import (
+from slither_matrix.slither.core.declarations.function_contract import FunctionContract
+from slither_matrix.slither.core.expressions import Identifier, Literal
+from slither_matrix.slither.core.solidity_types import (
     ArrayType,
     ElementaryType,
     FunctionType,
@@ -22,18 +22,18 @@ from slither.core.solidity_types import (
     UserDefinedType,
     TypeInformation,
 )
-from slither.core.solidity_types.elementary_type import (
+from slither_matrix.slither.core.solidity_types.elementary_type import (
     Int as ElementaryTypeInt,
     Uint,
     Byte,
     MaxValues,
 )
-from slither.core.solidity_types.type import Type
-from slither.core.variables.function_type_variable import FunctionTypeVariable
-from slither.core.variables.state_variable import StateVariable
-from slither.core.variables.variable import Variable
-from slither.slithir.exceptions import SlithIRError
-from slither.slithir.operations import (
+from slither_matrix.slither.core.solidity_types.type import Type
+from slither_matrix.slither.core.variables.function_type_variable import FunctionTypeVariable
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.core.variables.variable import Variable
+from slither_matrix.slither.slithir.exceptions import SlithIRError
+from slither_matrix.slither.slithir.operations import (
     Assignment,
     Balance,
     Binary,
@@ -67,22 +67,22 @@ from slither.slithir.operations import (
     Nop,
     Operation,
 )
-from slither.slithir.operations.codesize import CodeSize
-from slither.slithir.tmp_operations.argument import Argument, ArgumentType
-from slither.slithir.tmp_operations.tmp_call import TmpCall
-from slither.slithir.tmp_operations.tmp_new_array import TmpNewArray
-from slither.slithir.tmp_operations.tmp_new_contract import TmpNewContract
-from slither.slithir.tmp_operations.tmp_new_elementary_type import TmpNewElementaryType
-from slither.slithir.tmp_operations.tmp_new_structure import TmpNewStructure
-from slither.slithir.variables import Constant, ReferenceVariable, TemporaryVariable
-from slither.slithir.variables import TupleVariable
-from slither.utils.function import get_function_id
-from slither.utils.type import export_nested_types_from_variable
-from slither.visitors.slithir.expression_to_slithir import ExpressionToSlithIR
+from slither_matrix.slither.slithir.operations.codesize import CodeSize
+from slither_matrix.slither.slithir.tmp_operations.argument import Argument, ArgumentType
+from slither_matrix.slither.slithir.tmp_operations.tmp_call import TmpCall
+from slither_matrix.slither.slithir.tmp_operations.tmp_new_array import TmpNewArray
+from slither_matrix.slither.slithir.tmp_operations.tmp_new_contract import TmpNewContract
+from slither_matrix.slither.slithir.tmp_operations.tmp_new_elementary_type import TmpNewElementaryType
+from slither_matrix.slither.slithir.tmp_operations.tmp_new_structure import TmpNewStructure
+from slither_matrix.slither.slithir.variables import Constant, ReferenceVariable, TemporaryVariable
+from slither_matrix.slither.slithir.variables import TupleVariable
+from slither_matrix.slither.utils.function import get_function_id
+from slither_matrix.slither.utils.type import export_nested_types_from_variable
+from slither_matrix.slither.visitors.slithir.expression_to_slithir import ExpressionToSlithIR
 
 if TYPE_CHECKING:
-    from slither.core.cfg.node import Node
-    from slither.core.compilation_unit import SlitherCompilationUnit
+    from slither_matrix.slither.core.cfg.node import Node
+    from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
 
 logger = logging.getLogger("ConvertToIR")
 
@@ -90,7 +90,7 @@ logger = logging.getLogger("ConvertToIR")
 def convert_expression(expression, node):
     # handle standlone expression
     # such as return true;
-    from slither.core.cfg.node import NodeType
+    from slither_matrix.slither.core.cfg.node import NodeType
 
     if isinstance(expression, Literal) and node.type in [NodeType.IF, NodeType.IFLOOP]:
         cst = Constant(expression.value, expression.type)
@@ -1054,7 +1054,7 @@ def convert_to_solidity_func(ir):
     # abi.decode(a, (uint))
     elif call == SolidityFunction("abi.decode()") and len(new_ir.arguments) == 2:
         # If the variable is a referenceVariable, we are lost
-        # See https://github.com/crytic/slither/issues/566 for potential solutions
+        # See https://github.com/crytic/slither_matrix.slither/issues/566 for potential solutions
         if not isinstance(new_ir.arguments[1], ReferenceVariable):
             decode_type = new_ir.arguments[1]
             if isinstance(decode_type, (Structure, Enum, Contract)):

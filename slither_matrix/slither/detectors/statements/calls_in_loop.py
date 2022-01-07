@@ -1,6 +1,6 @@
-from slither.core.cfg.node import NodeType
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import (
+from slither_matrix.slither.core.cfg.node import NodeType
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import (
     HighLevelCall,
     LibraryCall,
     LowLevelCall,

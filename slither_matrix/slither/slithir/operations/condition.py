@@ -1,6 +1,6 @@
-from slither.slithir.operations.operation import Operation
+from slither_matrix.slither.slithir.operations.operation import Operation
 
-from slither.slithir.utils.utils import is_valid_rvalue
+from slither_matrix.slither.slithir.utils.utils import is_valid_rvalue
 
 
 class Condition(Operation):

@@ -1,4 +1,4 @@
-from slither.slithir.operations.lvalue import OperationWithLValue
+from slither_matrix.slither.slithir.operations.lvalue import OperationWithLValue
 
 
 class TmpNewContract(OperationWithLValue):

@@ -1,9 +1,9 @@
 """
 Module detecting unused return values from low level
 """
-from slither.detectors.abstract_detector import DetectorClassification
-from slither.detectors.operations.unused_return_values import UnusedReturnValues
-from slither.slithir.operations import LowLevelCall
+from slither_matrix.slither.detectors.abstract_detector import DetectorClassification
+from slither_matrix.slither.detectors.operations.unused_return_values import UnusedReturnValues
+from slither_matrix.slither.slithir.operations import LowLevelCall
 
 
 class UncheckedLowLevel(UnusedReturnValues):

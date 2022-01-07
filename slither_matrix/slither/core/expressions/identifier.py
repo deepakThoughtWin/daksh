@@ -1,9 +1,9 @@
 from typing import TYPE_CHECKING
 
-from slither.core.expressions.expression_typed import ExpressionTyped
+from slither_matrix.slither.core.expressions.expression_typed import ExpressionTyped
 
 if TYPE_CHECKING:
-    from slither.core.variables.variable import Variable
+    from slither_matrix.slither.core.variables.variable import Variable
 
 
 class Identifier(ExpressionTyped):

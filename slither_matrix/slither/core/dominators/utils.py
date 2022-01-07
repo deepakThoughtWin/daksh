@@ -1,6 +1,6 @@
 from typing import List, TYPE_CHECKING
 
-from slither.core.cfg.node import NodeType
+from slither_matrix.slither.core.cfg.node import NodeType
 
 if TYPE_CHECKING:
     from slither.core.cfg.node import Node

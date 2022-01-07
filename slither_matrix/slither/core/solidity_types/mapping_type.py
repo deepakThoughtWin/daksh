@@ -1,6 +1,6 @@
 from typing import Tuple
 
-from slither.core.solidity_types.type import Type
+from slither_matrix.slither.core.solidity_types.type import Type
 
 
 class MappingType(Type):

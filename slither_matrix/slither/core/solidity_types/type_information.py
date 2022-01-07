@@ -1,10 +1,10 @@
 from typing import TYPE_CHECKING, Tuple
 
-from slither.core.solidity_types import ElementaryType
-from slither.core.solidity_types.type import Type
+from slither_matrix.slither.core.solidity_types import ElementaryType
+from slither_matrix.slither.core.solidity_types.type import Type
 
 if TYPE_CHECKING:
-    from slither.core.declarations.contract import Contract
+    from slither_matrix.slither.core.declarations.contract import Contract
 
 
 # Use to model the Type(X) function, which returns an undefined type
@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 class TypeInformation(Type):
     def __init__(self, c):
         # pylint: disable=import-outside-toplevel
-        from slither.core.declarations.contract import Contract
+        from slither_matrix.slither.core.declarations.contract import Contract
 
         assert isinstance(c, (Contract, ElementaryType))
         super().__init__()

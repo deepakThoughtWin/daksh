@@ -9,9 +9,9 @@
     Only analyze "leaf" contracts (contracts that are not inherited by another contract)
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import InternalCall, LibraryCall
-from slither.slithir.variables import ReferenceVariable
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import InternalCall, LibraryCall
+from slither_matrix.slither.slithir.variables import ReferenceVariable
 
 
 class UninitializedStateVarsDetection(AbstractDetector):

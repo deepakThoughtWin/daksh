@@ -1,5 +1,5 @@
-from slither.core.variables.state_variable import StateVariable
-from slither.slithir.variables.variable import SlithIRVariable
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.slithir.variables.variable import SlithIRVariable
 
 
 class StateIRVariable(

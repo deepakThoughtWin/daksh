@@ -1,5 +1,5 @@
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import Nop
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import Nop
 
 
 class VoidConstructor(AbstractDetector):

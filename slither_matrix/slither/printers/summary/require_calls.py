@@ -2,10 +2,10 @@
     Module printing summary of the contract
 """
 
-from slither.core.declarations import SolidityFunction
-from slither.printers.abstract_printer import AbstractPrinter
-from slither.slithir.operations import SolidityCall
-from slither.utils.myprettytable import MyPrettyTable
+from slither_matrix.slither.core.declarations import SolidityFunction
+from slither_matrix.slither.printers.abstract_printer import AbstractPrinter
+from slither_matrix.slither.slithir.operations import SolidityCall
+from slither_matrix.slither.utils.myprettytable import MyPrettyTable
 
 require_or_assert = [
     SolidityFunction("assert(bool)"),

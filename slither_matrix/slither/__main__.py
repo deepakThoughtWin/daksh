@@ -19,15 +19,15 @@ from crytic_compile.platform.standard import generate_standard_export
 from crytic_compile.platform.etherscan import SUPPORTED_NETWORK
 from crytic_compile import compile_all, is_supported
 
-from slither.detectors import all_detectors
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.printers import all_printers
-from slither.printers.abstract_printer import AbstractPrinter
-from slither.slither import Slither
-from slither.utils.output import output_to_json, output_to_zip, output_to_sarif, ZIP_TYPES_ACCEPTED
-from slither.utils.output_capture import StandardOutputCapture
-from slither.utils.colors import red, set_colorization_enabled
-from slither.utils.command_line import (
+from slither_matrix.slither.detectors import all_detectors
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.printers import all_printers
+from slither_matrix.slither.printers.abstract_printer import AbstractPrinter
+from slither_matrix.slither.slither import Slither
+from slither_matrix.slither.utils.output import output_to_json, output_to_zip, output_to_sarif, ZIP_TYPES_ACCEPTED
+from slither_matrix.slither.utils.output_capture import StandardOutputCapture
+from slither_matrix.slither.utils.colors import red, set_colorization_enabled
+from slither_matrix.slither.utils.command_line import (
     output_detectors,
     output_results_to_markdown,
     output_detectors_json,
@@ -40,7 +40,7 @@ from slither.utils.command_line import (
     JSON_OUTPUT_TYPES,
     DEFAULT_JSON_OUTPUT_TYPES,
 )
-from slither.exceptions import SlitherException
+from slither_matrix.slither.exceptions import SlitherException
 
 logging.basicConfig()
 logger = logging.getLogger("Slither")

@@ -7,12 +7,12 @@ from typing import Optional, List, Dict, Callable, Tuple, TYPE_CHECKING, Union
 
 from crytic_compile.platform import Type as PlatformType
 
-from slither.core.cfg.scope import Scope
-from slither.core.solidity_types.type import Type
-from slither.core.source_mapping.source_mapping import SourceMapping
+from slither_matrix.slither.core.cfg.scope import Scope
+from slither_matrix.slither.core.solidity_types.type import Type
+from slither_matrix.slither.core.source_mapping.source_mapping import SourceMapping
 
-from slither.core.declarations.function import Function, FunctionType
-from slither.utils.erc import (
+from slither_matrix.slither.core.declarations.function import Function, FunctionType
+from slither_matrix.slither.utils.erc import (
     ERC20_signatures,
     ERC165_signatures,
     ERC223_signatures,
@@ -21,12 +21,12 @@ from slither.utils.erc import (
     ERC777_signatures,
     ERC1155_signatures,
 )
-from slither.utils.tests_pattern import is_test_contract
+from slither_matrix.slither.utils.tests_pattern import is_test_contract
 
 # pylint: disable=too-many-lines,too-many-instance-attributes,import-outside-toplevel,too-many-nested-blocks
 if TYPE_CHECKING:
-    from slither.utils.type_helpers import LibraryCallType, HighLevelCallType, InternalCallType
-    from slither.core.declarations import (
+    from slither_matrix.slither.utils.type_helpers import LibraryCallType, HighLevelCallType, InternalCallType
+    from slither_matrix.slither.core.declarations import (
         Enum,
         Event,
         Modifier,
@@ -34,10 +34,10 @@ if TYPE_CHECKING:
         StructureContract,
         FunctionContract,
     )
-    from slither.slithir.variables.variable import SlithIRVariable
-    from slither.core.variables.variable import Variable
-    from slither.core.variables.state_variable import StateVariable
-    from slither.core.compilation_unit import SlitherCompilationUnit
+    from slither_matrix.slither.slithir.variables.variable import SlithIRVariable
+    from slither_matrix.slither.core.variables.variable import Variable
+    from slither_matrix.slither.core.variables.state_variable import StateVariable
+    from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
 
 
 LOGGER = logging.getLogger("Contract")
@@ -1068,8 +1068,8 @@ class Contract(SourceMapping):  # pylint: disable=too-many-public-methods
 
     @property
     def is_upgradeable_proxy(self) -> bool:
-        from slither.core.cfg.node import NodeType
-        from slither.slithir.operations import LowLevelCall
+        from slither_matrix.slither.core.cfg.node import NodeType
+        from slither_matrix.slither.slithir.operations import LowLevelCall
 
         if self._is_upgradeable_proxy is None:
             self._is_upgradeable_proxy = False
@@ -1111,7 +1111,7 @@ class Contract(SourceMapping):  # pylint: disable=too-many-public-methods
         self._is_incorrectly_parsed = incorrect
 
     def add_constructor_variables(self):
-        from slither.core.declarations.function_contract import FunctionContract
+        from slither_matrix.slither.core.declarations.function_contract import FunctionContract
 
         if self.state_variables:
             for (idx, variable_candidate) in enumerate(self.state_variables):
@@ -1180,8 +1180,8 @@ class Contract(SourceMapping):  # pylint: disable=too-many-public-methods
     def _create_node(
         self, func: Function, counter: int, variable: "Variable", scope: Union[Scope, Function]
     ):
-        from slither.core.cfg.node import Node, NodeType
-        from slither.core.expressions import (
+        from slither_matrix.slither.core.cfg.node import Node, NodeType
+        from slither_matrix.slither.core.expressions import (
             AssignmentOperationType,
             AssignmentOperation,
             Identifier,
@@ -1217,7 +1217,7 @@ class Contract(SourceMapping):  # pylint: disable=too-many-public-methods
 
         :return:
         """
-        from slither.slithir.variables import StateIRVariable
+        from slither_matrix.slither.slithir.variables import StateIRVariable
 
         all_ssa_state_variables_instances = dict()
 

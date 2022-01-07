@@ -2,12 +2,12 @@
 Module detecting assignment of array length
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.core.cfg.node import NodeType
-from slither.slithir.operations import Assignment, Length
-from slither.slithir.variables.reference import ReferenceVariable
-from slither.slithir.operations.binary import Binary
-from slither.analyses.data_dependency.data_dependency import is_tainted
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.core.cfg.node import NodeType
+from slither_matrix.slither.slithir.operations import Assignment, Length
+from slither_matrix.slither.slithir.variables.reference import ReferenceVariable
+from slither_matrix.slither.slithir.operations.binary import Binary
+from slither_matrix.slither.analyses.data_dependency.data_dependency import is_tainted
 
 
 def detect_array_length_assignment(contract):

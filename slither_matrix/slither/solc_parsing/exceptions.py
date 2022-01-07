@@ -1,4 +1,4 @@
-from slither.exceptions import SlitherException
+from slither_matrix.slither.exceptions import SlitherException
 
 
 class ParsingError(SlitherException):

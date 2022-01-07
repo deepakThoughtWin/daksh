@@ -2,10 +2,10 @@
 Module detecting state variables initializing from an immediate function call (prior to constructor run).
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.visitors.expression.export_values import ExportValues
-from slither.core.declarations.function import Function
-from slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.visitors.expression.export_values import ExportValues
+from slither_matrix.slither.core.declarations.function import Function
+from slither_matrix.slither.core.variables.state_variable import StateVariable
 
 
 def detect_function_init_state_vars(contract):

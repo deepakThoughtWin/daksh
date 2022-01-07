@@ -7,12 +7,12 @@
 from collections import defaultdict
 from typing import Set, Dict, Union
 
-from slither.core.cfg.node import NodeType, Node
-from slither.core.declarations import Function
-from slither.core.expressions import UnaryOperation, UnaryOperationType
-from slither.core.variables.variable import Variable
-from slither.detectors.abstract_detector import AbstractDetector
-from slither.slithir.operations import Call, EventCall
+from slither_matrix.slither.core.cfg.node import NodeType, Node
+from slither_matrix.slither.core.declarations import Function
+from slither_matrix.slither.core.expressions import UnaryOperation, UnaryOperationType
+from slither_matrix.slither.core.variables.variable import Variable
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector
+from slither_matrix.slither.slithir.operations import Call, EventCall
 
 
 def union_dict(d1, d2):

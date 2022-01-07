@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-from slither.exceptions import SlitherException
+from slither_matrix.slither.exceptions import SlitherException
 
 # pylint: disable=too-many-branches
 def convert_subdenomination(

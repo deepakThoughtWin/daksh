@@ -1,20 +1,20 @@
 from typing import Union, TYPE_CHECKING, Tuple
 import math
 
-from slither.core.solidity_types.type import Type
-from slither.exceptions import SlitherException
+from slither_matrix.slither.core.solidity_types.type import Type
+from slither_matrix.slither.exceptions import SlitherException
 
 if TYPE_CHECKING:
-    from slither.core.declarations.structure import Structure
-    from slither.core.declarations.enum import Enum
-    from slither.core.declarations.contract import Contract
+    from slither_matrix.slither.core.declarations.structure import Structure
+    from slither_matrix.slither.core.declarations.enum import Enum
+    from slither_matrix.slither.core.declarations.contract import Contract
 
 # pylint: disable=import-outside-toplevel
 class UserDefinedType(Type):
     def __init__(self, t):
-        from slither.core.declarations.structure import Structure
-        from slither.core.declarations.enum import Enum
-        from slither.core.declarations.contract import Contract
+        from slither_matrix.slither.core.declarations.structure import Structure
+        from slither_matrix.slither.core.declarations.enum import Enum
+        from slither_matrix.slither.core.declarations.contract import Contract
 
         assert isinstance(t, (Contract, Enum, Structure))
         super().__init__()
@@ -26,9 +26,9 @@ class UserDefinedType(Type):
 
     @property
     def storage_size(self) -> Tuple[int, bool]:
-        from slither.core.declarations.structure import Structure
-        from slither.core.declarations.enum import Enum
-        from slither.core.declarations.contract import Contract
+        from slither_matrix.slither.core.declarations.structure import Structure
+        from slither_matrix.slither.core.declarations.enum import Enum
+        from slither_matrix.slither.core.declarations.contract import Contract
 
         if isinstance(self._type, Contract):
             return 20, False
@@ -59,8 +59,8 @@ class UserDefinedType(Type):
         raise SlitherException(to_log)
 
     def __str__(self):
-        from slither.core.declarations.structure_contract import StructureContract
-        from slither.core.declarations.enum_contract import EnumContract
+        from slither_matrix.slither.core.declarations.structure_contract import StructureContract
+        from slither_matrix.slither.core.declarations.enum_contract import EnumContract
 
         type_used = self.type
         if isinstance(type_used, (EnumContract, StructureContract)):

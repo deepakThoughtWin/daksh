@@ -1,6 +1,6 @@
-from slither.core.declarations.solidity_variables import SolidityFunction
-from slither.slithir.operations.call import Call
-from slither.slithir.operations.lvalue import OperationWithLValue
+from slither_matrix.slither.core.declarations.solidity_variables import SolidityFunction
+from slither_matrix.slither.slithir.operations.call import Call
+from slither_matrix.slither.slithir.operations.lvalue import OperationWithLValue
 
 
 class SolidityCall(Call, OperationWithLValue):

@@ -2,9 +2,9 @@
 Module detecting the incorrect use of unary expressions
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.visitors.expression.expression import ExpressionVisitor
-from slither.core.expressions.unary_operation import UnaryOperationType, UnaryOperation
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.visitors.expression.expression import ExpressionVisitor
+from slither_matrix.slither.core.expressions.unary_operation import UnaryOperationType, UnaryOperation
 
 
 class InvalidUnaryExpressionDetector(ExpressionVisitor):

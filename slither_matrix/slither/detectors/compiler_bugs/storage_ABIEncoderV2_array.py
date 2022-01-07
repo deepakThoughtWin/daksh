@@ -2,16 +2,16 @@
 Module detecting ABIEncoderV2 array bug
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.core.solidity_types import ArrayType
-from slither.core.solidity_types import UserDefinedType
-from slither.core.variables.local_variable import LocalVariable
-from slither.core.variables.state_variable import StateVariable
-from slither.slithir.operations import SolidityCall
-from slither.core.declarations.solidity_variables import SolidityFunction
-from slither.slithir.operations import EventCall
-from slither.slithir.operations import HighLevelCall
-from slither.utils.utils import unroll
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.core.solidity_types import ArrayType
+from slither_matrix.slither.core.solidity_types import UserDefinedType
+from slither_matrix.slither.core.variables.local_variable import LocalVariable
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.slithir.operations import SolidityCall
+from slither_matrix.slither.core.declarations.solidity_variables import SolidityFunction
+from slither_matrix.slither.slithir.operations import EventCall
+from slither_matrix.slither.slithir.operations import HighLevelCall
+from slither_matrix.slither.utils.utils import unroll
 
 vulnerable_solc_versions = [
     "0.4.7",

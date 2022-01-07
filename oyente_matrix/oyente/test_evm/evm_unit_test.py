@@ -2,10 +2,10 @@ import os
 
 from z3 import *
 
-from global_params import *
-from utils import to_unsigned
+from oyente_matrix.global_params import *
+from oyente_matrix.utils import to_unsigned
 
-from global_test_params import *
+from oyente_matrix.global_test_params import *
 
 
 class EvmUnitTest(object):

@@ -2,7 +2,7 @@
 Module detecting re-used base constructors in inheritance hierarchy.
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
 
 
 # Helper: adds explicitly called constructors with arguments to the results lookup.

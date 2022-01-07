@@ -2,12 +2,12 @@
 Module detecting misuse of Boolean constants
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import (
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import (
     Binary,
     BinaryType,
 )
-from slither.slithir.variables import Constant
+from slither_matrix.slither.slithir.variables import Constant
 
 
 class BooleanEquality(AbstractDetector):

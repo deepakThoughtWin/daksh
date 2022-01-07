@@ -1,5 +1,5 @@
-from slither.slithir.utils.utils import is_valid_lvalue
-from slither.slithir.operations.phi import Phi
+from slither_matrix.slither.slithir.utils.utils import is_valid_lvalue
+from slither_matrix.slither.slithir.operations.phi import Phi
 
 
 class PhiCallback(Phi):

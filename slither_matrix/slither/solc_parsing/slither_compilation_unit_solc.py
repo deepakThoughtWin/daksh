@@ -4,21 +4,21 @@ import os
 import re
 from typing import List, Dict
 
-from slither.analyses.data_dependency.data_dependency import compute_dependency
-from slither.core.compilation_unit import SlitherCompilationUnit
-from slither.core.declarations import Contract
-from slither.core.declarations.enum_top_level import EnumTopLevel
-from slither.core.declarations.function_top_level import FunctionTopLevel
-from slither.core.declarations.import_directive import Import
-from slither.core.declarations.pragma_directive import Pragma
-from slither.core.declarations.structure_top_level import StructureTopLevel
-from slither.core.variables.top_level_variable import TopLevelVariable
-from slither.exceptions import SlitherException
-from slither.solc_parsing.declarations.contract import ContractSolc
-from slither.solc_parsing.declarations.function import FunctionSolc
-from slither.solc_parsing.declarations.structure_top_level import StructureTopLevelSolc
-from slither.solc_parsing.exceptions import VariableNotFound
-from slither.solc_parsing.variables.top_level_variable import TopLevelVariableSolc
+from slither_matrix.slither.analyses.data_dependency.data_dependency import compute_dependency
+from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
+from slither_matrix.slither.core.declarations import Contract
+from slither_matrix.slither.core.declarations.enum_top_level import EnumTopLevel
+from slither_matrix.slither.core.declarations.function_top_level import FunctionTopLevel
+from slither_matrix.slither.core.declarations.import_directive import Import
+from slither_matrix.slither.core.declarations.pragma_directive import Pragma
+from slither_matrix.slither.core.declarations.structure_top_level import StructureTopLevel
+from slither_matrix.slither.core.variables.top_level_variable import TopLevelVariable
+from slither_matrix.slither.exceptions import SlitherException
+from slither_matrix.slither.solc_parsing.declarations.contract import ContractSolc
+from slither_matrix.slither.solc_parsing.declarations.function import FunctionSolc
+from slither_matrix.slither.solc_parsing.declarations.structure_top_level import StructureTopLevelSolc
+from slither_matrix.slither.solc_parsing.exceptions import VariableNotFound
+from slither_matrix.slither.solc_parsing.variables.top_level_variable import TopLevelVariableSolc
 
 logging.basicConfig()
 logger = logging.getLogger("SlitherSolcParsing")

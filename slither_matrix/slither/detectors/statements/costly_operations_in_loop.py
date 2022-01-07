@@ -1,7 +1,7 @@
-from slither.core.cfg.node import NodeType
-from slither.core.solidity_types.array_type import ArrayType
-from slither.core.solidity_types.mapping_type import MappingType
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.core.cfg.node import NodeType
+from slither_matrix.slither.core.solidity_types.array_type import ArrayType
+from slither_matrix.slither.core.solidity_types.mapping_type import MappingType
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
 
 
 class CostlyOperationsInLoop(AbstractDetector):

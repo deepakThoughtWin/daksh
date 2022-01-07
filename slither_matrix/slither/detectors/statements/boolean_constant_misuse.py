@@ -1,10 +1,10 @@
 """
 Module detecting misuse of Boolean constants
 """
-from slither.core.cfg.node import NodeType
-from slither.core.solidity_types import ElementaryType
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import (
+from slither_matrix.slither.core.cfg.node import NodeType
+from slither_matrix.slither.core.solidity_types import ElementaryType
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import (
     Assignment,
     Call,
     Return,
@@ -13,7 +13,7 @@ from slither.slithir.operations import (
     BinaryType,
     Condition,
 )
-from slither.slithir.variables import Constant
+from slither_matrix.slither.slithir.variables import Constant
 
 
 class BooleanConstantMisuse(AbstractDetector):

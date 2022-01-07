@@ -1,4 +1,4 @@
-from slither.core.variables.variable import Variable
+from slither_matrix.slither.core.variables.variable import Variable
 
 
 class SlithIRVariable(Variable):

@@ -1,9 +1,9 @@
-from slither.slithir.operations.call import Call
-from slither.slithir.operations.lvalue import OperationWithLValue
+from slither_matrix.slither.slithir.operations.call import Call
+from slither_matrix.slither.slithir.operations.lvalue import OperationWithLValue
 
-from slither.slithir.utils.utils import is_valid_lvalue
+from slither_matrix.slither.slithir.utils.utils import is_valid_lvalue
 
-from slither.core.declarations.structure import Structure
+from slither_matrix.slither.core.declarations.structure import Structure
 
 
 class NewStructure(Call, OperationWithLValue):

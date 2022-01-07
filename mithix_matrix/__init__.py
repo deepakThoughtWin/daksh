@@ -1,0 +1,1 @@
+from .api import mithix_analisys

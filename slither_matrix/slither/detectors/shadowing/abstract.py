@@ -4,10 +4,10 @@ Recursively check the called functions
 """
 from typing import List
 
-from slither.core.declarations import Contract
-from slither.core.variables.state_variable import StateVariable
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.utils.output import Output, AllSupportedOutput
+from slither_matrix.slither.core.declarations import Contract
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.utils.output import Output, AllSupportedOutput
 
 
 def detect_shadowing(contract: Contract) -> List[List[StateVariable]]:

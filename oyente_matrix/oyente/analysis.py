@@ -1,12 +1,12 @@
 import logging
 import math
 import six
-from opcodes import *
+from oyente_matrix.oyente.opcodes import *
 from z3 import *
 from z3.z3util import *
-from vargenerator import *
-from utils import *
-import global_params
+from oyente_matrix.oyente.vargenerator import *
+from oyente_matrix.oyente.utils import *
+from oyente_matrix.oyente import global_params
 
 log = logging.getLogger(__name__)
 

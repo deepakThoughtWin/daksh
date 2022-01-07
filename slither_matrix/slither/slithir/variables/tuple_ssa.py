@@ -3,7 +3,7 @@
     It is similar to the non-SSA version of slithIR
     as the TupleVariable are in SSA form in both version
 """
-from slither.slithir.variables.tuple import TupleVariable
+from slither_matrix.slither.slithir.variables.tuple import TupleVariable
 
 
 class TupleVariableSSA(TupleVariable):  # pylint: disable=too-few-public-methods

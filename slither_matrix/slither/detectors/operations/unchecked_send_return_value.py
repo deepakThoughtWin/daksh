@@ -2,9 +2,9 @@
 Module detecting unused return values from send
 """
 
-from slither.detectors.abstract_detector import DetectorClassification
-from slither.detectors.operations.unused_return_values import UnusedReturnValues
-from slither.slithir.operations import Send
+from slither_matrix.slither.detectors.abstract_detector import DetectorClassification
+from slither_matrix.slither.detectors.operations.unused_return_values import UnusedReturnValues
+from slither_matrix.slither.slithir.operations import Send
 
 
 class UncheckedSend(UnusedReturnValues):

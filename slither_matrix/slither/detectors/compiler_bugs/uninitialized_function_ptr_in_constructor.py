@@ -2,10 +2,10 @@
 Module detecting uninitialized function pointer calls in constructors
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import InternalDynamicCall, OperationWithLValue
-from slither.slithir.variables import ReferenceVariable
-from slither.slithir.variables.variable import SlithIRVariable
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import InternalDynamicCall, OperationWithLValue
+from slither_matrix.slither.slithir.variables import ReferenceVariable
+from slither_matrix.slither.slithir.variables.variable import SlithIRVariable
 
 vulnerable_solc_versions = [
     "0.4.5",

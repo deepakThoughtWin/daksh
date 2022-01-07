@@ -1,11 +1,11 @@
 from typing import List, Set, Tuple, Dict
 
-from slither.core.cfg.node import Node, NodeType
-from slither.core.solidity_types import ElementaryType
-from slither.core.variables.state_variable import StateVariable
-from slither.core.variables.variable import Variable
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import (
+from slither_matrix.slither.core.cfg.node import Node, NodeType
+from slither_matrix.slither.core.solidity_types import ElementaryType
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.core.variables.variable import Variable
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import (
     OperationWithLValue,
     HighLevelCall,
     InternalDynamicCall,
@@ -13,8 +13,8 @@ from slither.slithir.operations import (
     LowLevelCall,
     Operation,
 )
-from slither.slithir.variables import ReferenceVariable, TemporaryVariable
-from slither.slithir.variables.variable import SlithIRVariable
+from slither_matrix.slither.slithir.variables import ReferenceVariable, TemporaryVariable
+from slither_matrix.slither.slithir.variables.variable import SlithIRVariable
 
 
 def _remove_states(written: Dict[Variable, Node]):

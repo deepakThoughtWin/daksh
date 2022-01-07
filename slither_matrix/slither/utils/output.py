@@ -8,17 +8,17 @@ from typing import Optional, Dict, List, Union, Any, TYPE_CHECKING
 from zipfile import ZipFile
 from pkg_resources import require
 
-from slither.core.cfg.node import Node
-from slither.core.declarations import Contract, Function, Enum, Event, Structure, Pragma
-from slither.core.source_mapping.source_mapping import SourceMapping
-from slither.core.variables.variable import Variable
-from slither.exceptions import SlitherError
-from slither.utils.colors import yellow
-from slither.utils.myprettytable import MyPrettyTable
+from slither_matrix.slither.core.cfg.node import Node
+from slither_matrix.slither.core.declarations import Contract, Function, Enum, Event, Structure, Pragma
+from slither_matrix.slither.core.source_mapping.source_mapping import SourceMapping
+from slither_matrix.slither.core.variables.variable import Variable
+from slither_matrix.slither.exceptions import SlitherError
+from slither_matrix.slither.utils.colors import yellow
+from slither_matrix.slither.utils.myprettytable import MyPrettyTable
 
 if TYPE_CHECKING:
-    from slither.core.compilation_unit import SlitherCompilationUnit
-    from slither.detectors.abstract_detector import AbstractDetector
+    from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
+    from slither_matrix.slither.detectors.abstract_detector import AbstractDetector
 
 logger = logging.getLogger("Slither")
 
@@ -315,9 +315,9 @@ def _create_base_element(
 
 def _create_parent_element(element):
     # pylint: disable=import-outside-toplevel
-    from slither.core.children.child_contract import ChildContract
-    from slither.core.children.child_function import ChildFunction
-    from slither.core.children.child_inheritance import ChildInheritance
+    from slither_matrix.slither.core.children.child_contract import ChildContract
+    from slither_matrix.slither.core.children.child_function import ChildFunction
+    from slither_matrix.slither.core.children.child_inheritance import ChildInheritance
 
     if isinstance(element, ChildInheritance):
         if element.contract_declarer:

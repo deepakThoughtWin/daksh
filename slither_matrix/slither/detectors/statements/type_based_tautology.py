@@ -2,10 +2,10 @@
 Module detecting tautologies and contradictions based on types in comparison operations over integers
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import Binary, BinaryType
-from slither.slithir.variables import Constant
-from slither.core.solidity_types.elementary_type import Int, Uint
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import Binary, BinaryType
+from slither_matrix.slither.slithir.variables import Constant
+from slither_matrix.slither.core.solidity_types.elementary_type import Int, Uint
 
 
 def typeRange(t):

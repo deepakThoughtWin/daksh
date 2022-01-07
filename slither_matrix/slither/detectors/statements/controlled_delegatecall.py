@@ -1,6 +1,6 @@
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import LowLevelCall
-from slither.analyses.data_dependency.data_dependency import is_tainted
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import LowLevelCall
+from slither_matrix.slither.analyses.data_dependency.data_dependency import is_tainted
 
 
 def controlled_delegatecall(function):

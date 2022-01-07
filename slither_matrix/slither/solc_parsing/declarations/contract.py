@@ -1,17 +1,17 @@
 import logging
 from typing import List, Dict, Callable, TYPE_CHECKING, Union, Set
 
-from slither.core.declarations import Modifier, Event, EnumContract, StructureContract, Function
-from slither.core.declarations.contract import Contract
-from slither.core.declarations.function_contract import FunctionContract
-from slither.core.variables.state_variable import StateVariable
-from slither.solc_parsing.declarations.event import EventSolc
-from slither.solc_parsing.declarations.function import FunctionSolc
-from slither.solc_parsing.declarations.modifier import ModifierSolc
-from slither.solc_parsing.declarations.structure_contract import StructureContractSolc
-from slither.solc_parsing.exceptions import ParsingError, VariableNotFound
-from slither.solc_parsing.solidity_types.type_parsing import parse_type
-from slither.solc_parsing.variables.state_variable import StateVariableSolc
+from slither_matrix.slither.core.declarations import Modifier, Event, EnumContract, StructureContract, Function
+from slither_matrix.slither.core.declarations.contract import Contract
+from slither_matrix.slither.core.declarations.function_contract import FunctionContract
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.solc_parsing.declarations.event import EventSolc
+from slither_matrix.slither.solc_parsing.declarations.function import FunctionSolc
+from slither_matrix.slither.solc_parsing.declarations.modifier import ModifierSolc
+from slither_matrix.slither.solc_parsing.declarations.structure_contract import StructureContractSolc
+from slither_matrix.slither.solc_parsing.exceptions import ParsingError, VariableNotFound
+from slither_matrix.slither.solc_parsing.solidity_types.type_parsing import parse_type
+from slither_matrix.slither.solc_parsing.variables.state_variable import StateVariableSolc
 
 LOGGER = logging.getLogger("ContractSolcParsing")
 

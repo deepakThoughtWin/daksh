@@ -1,12 +1,12 @@
 import logging
 
-from slither.core.declarations import (
+from slither_matrix.slither.core.declarations import (
     Function,
     SolidityVariable,
     SolidityVariableComposed,
     SolidityFunction,
 )
-from slither.core.expressions import (
+from slither_matrix.slither.core.expressions import (
     AssignmentOperationType,
     UnaryOperationType,
     BinaryOperationType,
@@ -14,11 +14,11 @@ from slither.core.expressions import (
     CallExpression,
     Identifier,
 )
-from slither.core.solidity_types import ArrayType, ElementaryType
-from slither.core.solidity_types.type import Type
-from slither.core.variables.local_variable_init_from_tuple import LocalVariableInitFromTuple
-from slither.slithir.exceptions import SlithIRError
-from slither.slithir.operations import (
+from slither_matrix.slither.core.solidity_types import ArrayType, ElementaryType
+from slither_matrix.slither.core.solidity_types.type import Type
+from slither_matrix.slither.core.variables.local_variable_init_from_tuple import LocalVariableInitFromTuple
+from slither_matrix.slither.slithir.exceptions import SlithIRError
+from slither_matrix.slither.slithir.operations import (
     Assignment,
     Binary,
     BinaryType,
@@ -32,18 +32,18 @@ from slither.slithir.operations import (
     Unpack,
     Return,
 )
-from slither.slithir.tmp_operations.argument import Argument
-from slither.slithir.tmp_operations.tmp_call import TmpCall
-from slither.slithir.tmp_operations.tmp_new_array import TmpNewArray
-from slither.slithir.tmp_operations.tmp_new_contract import TmpNewContract
-from slither.slithir.tmp_operations.tmp_new_elementary_type import TmpNewElementaryType
-from slither.slithir.variables import (
+from slither_matrix.slither.slithir.tmp_operations.argument import Argument
+from slither_matrix.slither.slithir.tmp_operations.tmp_call import TmpCall
+from slither_matrix.slither.slithir.tmp_operations.tmp_new_array import TmpNewArray
+from slither_matrix.slither.slithir.tmp_operations.tmp_new_contract import TmpNewContract
+from slither_matrix.slither.slithir.tmp_operations.tmp_new_elementary_type import TmpNewElementaryType
+from slither_matrix.slither.slithir.variables import (
     Constant,
     ReferenceVariable,
     TemporaryVariable,
     TupleVariable,
 )
-from slither.visitors.expression.expression import ExpressionVisitor
+from slither_matrix.slither.visitors.expression.expression import ExpressionVisitor
 
 logger = logging.getLogger("VISTIOR:ExpressionToSlithIR")
 
@@ -121,7 +121,7 @@ def convert_assignment(left, right, t, return_type):
 
 class ExpressionToSlithIR(ExpressionVisitor):
     def __init__(self, expression, node):  # pylint: disable=super-init-not-called
-        from slither.core.cfg.node import NodeType  # pylint: disable=import-outside-toplevel
+        from slither_matrix.slither.core.cfg.node import NodeType  # pylint: disable=import-outside-toplevel
 
         self._expression = expression
         self._node = node

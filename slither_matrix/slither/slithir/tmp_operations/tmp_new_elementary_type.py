@@ -1,5 +1,5 @@
-from slither.slithir.operations.lvalue import OperationWithLValue
-from slither.core.solidity_types.elementary_type import ElementaryType
+from slither_matrix.slither.slithir.operations.lvalue import OperationWithLValue
+from slither_matrix.slither.core.solidity_types.elementary_type import ElementaryType
 
 
 class TmpNewElementaryType(OperationWithLValue):

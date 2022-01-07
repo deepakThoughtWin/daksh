@@ -2,10 +2,10 @@
 Detect deletion on structure containing a mapping
 """
 
-from slither.core.declarations import Structure
-from slither.core.solidity_types import MappingType, UserDefinedType
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import Delete
+from slither_matrix.slither.core.declarations import Structure
+from slither_matrix.slither.core.solidity_types import MappingType, UserDefinedType
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import Delete
 
 
 class MappingDeletionDetection(AbstractDetector):

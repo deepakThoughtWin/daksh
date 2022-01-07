@@ -1,6 +1,6 @@
 import re
-from slither.formatters.exceptions import FormatImpossible
-from slither.formatters.utils.patches import create_patch
+from slither_matrix.slither.formatters.exceptions import FormatImpossible
+from slither_matrix.slither.formatters.utils.patches import create_patch
 
 # Indicates the recommended versions for replacement
 REPLACEMENT_VERSIONS = ["^0.4.25", "^0.5.3"]

@@ -3,12 +3,12 @@
 """
 from typing import TYPE_CHECKING, Dict
 
-from slither.core.variables.event_variable import EventVariable
-from slither.solc_parsing.variables.event_variable import EventVariableSolc
-from slither.core.declarations.event import Event
+from slither_matrix.slither.core.variables.event_variable import EventVariable
+from slither_matrix.slither.solc_parsing.variables.event_variable import EventVariableSolc
+from slither_matrix.slither.core.declarations.event import Event
 
 if TYPE_CHECKING:
-    from slither.solc_parsing.declarations.contract import ContractSolc
+    from slither_matrix.slither.solc_parsing.declarations.contract import ContractSolc
 
 
 class EventSolc:

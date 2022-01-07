@@ -1,7 +1,7 @@
 from typing import List
 
-from slither.core.expressions.expression import Expression
-from slither.visitors.expression.expression import ExpressionVisitor
+from slither_matrix.slither.core.expressions.expression import Expression
+from slither_matrix.slither.visitors.expression.expression import ExpressionVisitor
 
 key = "FindCall"
 

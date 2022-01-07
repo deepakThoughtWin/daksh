@@ -3,12 +3,12 @@
 """
 from typing import Optional, TYPE_CHECKING, List, Union
 
-from slither.core.source_mapping.source_mapping import SourceMapping
-from slither.core.solidity_types.type import Type
-from slither.core.solidity_types.elementary_type import ElementaryType
+from slither_matrix.slither.core.source_mapping.source_mapping import SourceMapping
+from slither_matrix.slither.core.solidity_types.type import Type
+from slither_matrix.slither.core.solidity_types.elementary_type import ElementaryType
 
 if TYPE_CHECKING:
-    from slither.core.expressions.expression import Expression
+    from slither_matrix.slither.core.expressions.expression import Expression
 
 
 class Variable(SourceMapping):
@@ -113,8 +113,8 @@ class Variable(SourceMapping):
         :return:
         """
         # pylint: disable=import-outside-toplevel
-        from slither.core.solidity_types import ArrayType, MappingType
-        from slither.utils.type import export_nested_types_from_variable
+        from slither_matrix.slither.core.solidity_types import ArrayType, MappingType
+        from slither_matrix.slither.utils.type import export_nested_types_from_variable
 
         variable_getter_args = ""
         return_type = self.type

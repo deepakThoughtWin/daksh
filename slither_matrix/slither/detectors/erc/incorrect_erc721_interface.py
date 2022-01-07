@@ -1,7 +1,7 @@
 """
 Detect incorrect erc721 interface.
 """
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
 
 
 class IncorrectERC721InterfaceDetection(AbstractDetector):

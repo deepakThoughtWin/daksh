@@ -5,21 +5,21 @@ from typing import Optional, Dict, List, Set, Union, TYPE_CHECKING, Tuple
 from crytic_compile import CompilationUnit, CryticCompile
 from crytic_compile.compiler.compiler import CompilerVersion
 
-from slither.core.context.context import Context
-from slither.core.declarations import (
+from slither_matrix.slither.core.context.context import Context
+from slither_matrix.slither.core.declarations import (
     Contract,
     Pragma,
     Import,
     Function,
     Modifier,
 )
-from slither.core.declarations.enum_top_level import EnumTopLevel
-from slither.core.declarations.function_top_level import FunctionTopLevel
-from slither.core.declarations.structure_top_level import StructureTopLevel
-from slither.core.variables.state_variable import StateVariable
-from slither.core.variables.top_level_variable import TopLevelVariable
-from slither.slithir.operations import InternalCall
-from slither.slithir.variables import Constant
+from slither_matrix.slither.core.declarations.enum_top_level import EnumTopLevel
+from slither_matrix.slither.core.declarations.function_top_level import FunctionTopLevel
+from slither_matrix.slither.core.declarations.structure_top_level import StructureTopLevel
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.core.variables.top_level_variable import TopLevelVariable
+from slither_matrix.slither.slithir.operations import InternalCall
+from slither_matrix.slither.slithir.variables import Constant
 
 if TYPE_CHECKING:
     from slither.core.slither_core import SlitherCore

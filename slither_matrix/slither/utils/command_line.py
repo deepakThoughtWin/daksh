@@ -6,9 +6,9 @@ from crytic_compile.cryticparser.defaults import (
     DEFAULTS_FLAG_IN_CONFIG as DEFAULTS_FLAG_IN_CONFIG_CRYTIC_COMPILE,
 )
 
-from slither.detectors.abstract_detector import classification_txt
-from slither.utils.colors import yellow, red
-from slither.utils.myprettytable import MyPrettyTable
+from slither_matrix.slither.detectors.abstract_detector import classification_txt
+from slither_matrix.slither.utils.colors import yellow, red
+from slither_matrix.slither.utils.myprettytable import MyPrettyTable
 
 logger = logging.getLogger("Slither")
 

@@ -3,7 +3,7 @@
     It is similar to the non-SSA version of slithIR
     as the ReferenceVariable are in SSA form in both version
 """
-from slither.slithir.variables.reference import ReferenceVariable
+from slither_matrix.slither.slithir.variables.reference import ReferenceVariable
 
 
 class ReferenceVariableSSA(ReferenceVariable):  # pylint: disable=too-few-public-methods

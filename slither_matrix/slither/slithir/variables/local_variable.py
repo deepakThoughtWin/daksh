@@ -1,6 +1,6 @@
-from slither.core.variables.local_variable import LocalVariable
-from slither.slithir.variables.temporary import TemporaryVariable
-from slither.slithir.variables.variable import SlithIRVariable
+from slither_matrix.slither.core.variables.local_variable import LocalVariable
+from slither_matrix.slither.slithir.variables.temporary import TemporaryVariable
+from slither_matrix.slither.slithir.variables.variable import SlithIRVariable
 
 
 class LocalIRVariable(

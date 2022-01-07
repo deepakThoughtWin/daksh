@@ -1,9 +1,9 @@
-from slither.slithir.operations.call import Call
-from slither.slithir.operations.lvalue import OperationWithLValue
-from slither.core.variables.variable import Variable
-from slither.core.declarations.solidity_variables import SolidityVariable
+from slither_matrix.slither.slithir.operations.call import Call
+from slither_matrix.slither.slithir.operations.lvalue import OperationWithLValue
+from slither_matrix.slither.core.variables.variable import Variable
+from slither_matrix.slither.core.declarations.solidity_variables import SolidityVariable
 
-from slither.slithir.variables.constant import Constant
+from slither_matrix.slither.slithir.variables.constant import Constant
 
 
 class LowLevelCall(Call, OperationWithLValue):  # pylint: disable=too-many-instance-attributes

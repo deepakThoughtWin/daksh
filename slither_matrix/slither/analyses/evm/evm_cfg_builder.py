@@ -1,5 +1,5 @@
 import logging
-from slither.exceptions import SlitherError
+from slither_matrix.slither.exceptions import SlitherError
 
 logger = logging.getLogger("ConvertToEVM")
 

@@ -1,8 +1,8 @@
 import re
 import logging
 
-from slither.core.compilation_unit import SlitherCompilationUnit
-from slither.slithir.operations import (
+from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
+from slither_matrix.slither.slithir.operations import (
     Send,
     Transfer,
     OperationWithLValue,
@@ -11,13 +11,13 @@ from slither.slithir.operations import (
     InternalCall,
     InternalDynamicCall,
 )
-from slither.core.declarations import Modifier
-from slither.core.solidity_types import UserDefinedType, MappingType
-from slither.core.declarations import Enum, Contract, Structure, Function
-from slither.core.solidity_types.elementary_type import ElementaryTypeName
-from slither.core.variables.local_variable import LocalVariable
-from slither.formatters.exceptions import FormatError, FormatImpossible
-from slither.formatters.utils.patches import create_patch
+from slither_matrix.slither.core.declarations import Modifier
+from slither_matrix.slither.core.solidity_types import UserDefinedType, MappingType
+from slither_matrix.slither.core.declarations import Enum, Contract, Structure, Function
+from slither_matrix.slither.core.solidity_types.elementary_type import ElementaryTypeName
+from slither_matrix.slither.core.variables.local_variable import LocalVariable
+from slither_matrix.slither.formatters.exceptions import FormatError, FormatImpossible
+from slither_matrix.slither.formatters.utils.patches import create_patch
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("Slither.Format")

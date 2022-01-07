@@ -1,5 +1,5 @@
-from slither.core.expressions.expression import Expression
-from slither.core.solidity_types.type import Type
+from slither_matrix.slither.core.expressions.expression import Expression
+from slither_matrix.slither.core.solidity_types.type import Type
 
 
 class NewArray(Expression):

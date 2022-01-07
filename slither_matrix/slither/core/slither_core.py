@@ -9,11 +9,11 @@ from typing import Optional, Dict, List, Set, Union
 
 from crytic_compile import CryticCompile
 
-from slither.core.compilation_unit import SlitherCompilationUnit
-from slither.core.context.context import Context
-from slither.core.declarations import Contract
-from slither.slithir.variables import Constant
-from slither.utils.colors import red
+from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
+from slither_matrix.slither.core.context.context import Context
+from slither_matrix.slither.core.declarations import Contract
+from slither_matrix.slither.slithir.variables import Constant
+from slither_matrix.slither.utils.colors import red
 
 logger = logging.getLogger("Slither")
 logging.basicConfig()

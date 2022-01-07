@@ -2,16 +2,16 @@ import abc
 import json
 from typing import Optional, Dict, List, Union
 
-from slither.core.cfg.node import NodeType, Node, link_nodes
-from slither.core.cfg.scope import Scope
-from slither.core.compilation_unit import SlitherCompilationUnit
-from slither.core.declarations import (
+from slither_matrix.slither.core.cfg.node import NodeType, Node, link_nodes
+from slither_matrix.slither.core.cfg.scope import Scope
+from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
+from slither_matrix.slither.core.declarations import (
     Function,
     SolidityFunction,
     Contract,
 )
-from slither.core.declarations.function_contract import FunctionContract
-from slither.core.expressions import (
+from slither_matrix.slither.core.declarations.function_contract import FunctionContract
+from slither_matrix.slither.core.expressions import (
     Literal,
     AssignmentOperation,
     AssignmentOperationType,
@@ -21,21 +21,21 @@ from slither.core.expressions import (
     BinaryOperation,
     UnaryOperation,
 )
-from slither.core.expressions.expression import Expression
-from slither.core.solidity_types import ElementaryType
-from slither.core.source_mapping.source_mapping import SourceMapping
-from slither.core.variables.local_variable import LocalVariable
-from slither.exceptions import SlitherException
-from slither.solc_parsing.yul.evm_functions import (
+from slither_matrix.slither.core.expressions.expression import Expression
+from slither_matrix.slither.core.solidity_types import ElementaryType
+from slither_matrix.slither.core.source_mapping.source_mapping import SourceMapping
+from slither_matrix.slither.core.variables.local_variable import LocalVariable
+from slither_matrix.slither.exceptions import SlitherException
+from slither_matrix.slither.solc_parsing.yul.evm_functions import (
     format_function_descriptor,
     builtins,
     YulBuiltin,
     unary_ops,
     binary_ops,
 )
-from slither.visitors.expression.find_calls import FindCalls
-from slither.visitors.expression.read_var import ReadVar
-from slither.visitors.expression.write_var import WriteVar
+from slither_matrix.slither.visitors.expression.find_calls import FindCalls
+from slither_matrix.slither.visitors.expression.read_var import ReadVar
+from slither_matrix.slither.visitors.expression.write_var import WriteVar
 
 
 class YulNode:

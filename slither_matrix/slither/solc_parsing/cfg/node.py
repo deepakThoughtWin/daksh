@@ -1,16 +1,16 @@
 from typing import Optional, Dict
 
-from slither.core.cfg.node import Node
-from slither.core.cfg.node import NodeType
-from slither.core.expressions.assignment_operation import (
+from slither_matrix.slither.core.cfg.node import Node
+from slither_matrix.slither.core.cfg.node import NodeType
+from slither_matrix.slither.core.expressions.assignment_operation import (
     AssignmentOperation,
     AssignmentOperationType,
 )
-from slither.core.expressions.identifier import Identifier
-from slither.solc_parsing.expressions.expression_parsing import parse_expression
-from slither.visitors.expression.find_calls import FindCalls
-from slither.visitors.expression.read_var import ReadVar
-from slither.visitors.expression.write_var import WriteVar
+from slither_matrix.slither.core.expressions.identifier import Identifier
+from slither_matrix.slither.solc_parsing.expressions.expression_parsing import parse_expression
+from slither_matrix.slither.visitors.expression.find_calls import FindCalls
+from slither_matrix.slither.visitors.expression.read_var import ReadVar
+from slither_matrix.slither.visitors.expression.write_var import WriteVar
 
 
 class NodeSolc:

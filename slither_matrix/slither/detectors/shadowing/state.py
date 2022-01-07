@@ -2,7 +2,7 @@
 Module detecting shadowing of state variables
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
 
 
 def detect_shadowing(contract):

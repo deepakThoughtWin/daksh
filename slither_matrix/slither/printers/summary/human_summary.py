@@ -5,23 +5,23 @@ import logging
 from pathlib import Path
 from typing import Tuple, List, Dict
 
-from slither.core.declarations import SolidityFunction, Function
-from slither.core.variables.state_variable import StateVariable
-from slither.printers.abstract_printer import AbstractPrinter
-from slither.slithir.operations import (
+from slither_matrix.slither.core.declarations import SolidityFunction, Function
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.printers.abstract_printer import AbstractPrinter
+from slither_matrix.slither.slithir.operations import (
     LowLevelCall,
     HighLevelCall,
     Transfer,
     Send,
     SolidityCall,
 )
-from slither.utils import output
-from slither.utils.code_complexity import compute_cyclomatic_complexity
-from slither.utils.colors import green, red, yellow
-from slither.utils.myprettytable import MyPrettyTable
-from slither.utils.standard_libraries import is_standard_library
-from slither.core.cfg.node import NodeType
-from slither.utils.tests_pattern import is_test_file
+from slither_matrix.slither.utils import output
+from slither_matrix.slither.utils.code_complexity import compute_cyclomatic_complexity
+from slither_matrix.slither.utils.colors import green, red, yellow
+from slither_matrix.slither.utils.myprettytable import MyPrettyTable
+from slither_matrix.slither.utils.standard_libraries import is_standard_library
+from slither_matrix.slither.core.cfg.node import NodeType
+from slither_matrix.slither.utils.tests_pattern import is_test_file
 
 
 class PrinterHumanSummary(AbstractPrinter):
@@ -418,5 +418,5 @@ class PrinterHumanSummary(AbstractPrinter):
         # results["contracts"]["elements"] = results_contract.elements
 
         # json = self.generate_output(txt, additional_fields=results)
-
+        
         return results["number_findings"]

@@ -1,10 +1,10 @@
 from typing import TYPE_CHECKING
 
-from slither.core.children.child_node import ChildNode
-from slither.slithir.variables.variable import SlithIRVariable
+from slither_matrix.slither.core.children.child_node import ChildNode
+from slither_matrix.slither.slithir.variables.variable import SlithIRVariable
 
 if TYPE_CHECKING:
-    from slither.core.cfg.node import Node
+    from slither_matrix.slither.core.cfg.node import Node
 
 
 class TupleVariable(ChildNode, SlithIRVariable):

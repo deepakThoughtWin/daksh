@@ -1,6 +1,6 @@
 import re
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.formatters.naming_convention.naming_convention import custom_format
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.formatters.naming_convention.naming_convention import custom_format
 
 
 class NamingConvention(AbstractDetector):

@@ -4,15 +4,15 @@
 """
 from typing import List, Tuple
 
-from slither.analyses.data_dependency.data_dependency import is_dependent
-from slither.core.cfg.node import Node
-from slither.core.declarations import Function, Contract
-from slither.core.declarations.solidity_variables import (
+from slither_matrix.slither.analyses.data_dependency.data_dependency import is_dependent
+from slither_matrix.slither.core.cfg.node import Node
+from slither_matrix.slither.core.declarations import Function, Contract
+from slither_matrix.slither.core.declarations.solidity_variables import (
     SolidityVariableComposed,
     SolidityVariable,
 )
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import Binary, BinaryType
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import Binary, BinaryType
 
 
 def _timestamp(func: Function) -> List[Node]:

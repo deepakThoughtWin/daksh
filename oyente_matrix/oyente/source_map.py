@@ -3,10 +3,10 @@ import six
 import ast
 import json
 
-import global_params
+from oyente_matrix.oyente import global_params
 
-from utils import run_command
-from ast_helper import AstHelper
+from oyente_matrix.oyente.utils import run_command
+from oyente_matrix.oyente.ast_helper import AstHelper
 
 class Source:
     def __init__(self, filename):

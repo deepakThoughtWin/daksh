@@ -3,17 +3,17 @@
 """
 from typing import Dict, TYPE_CHECKING, Union
 
-from slither.core.cfg.node import NodeType
-from slither.core.cfg.node import link_nodes
-from slither.core.cfg.scope import Scope
-from slither.core.declarations.modifier import Modifier
-from slither.solc_parsing.cfg.node import NodeSolc
-from slither.solc_parsing.declarations.function import FunctionSolc
+from slither_matrix.slither.core.cfg.node import NodeType
+from slither_matrix.slither.core.cfg.node import link_nodes
+from slither_matrix.slither.core.cfg.scope import Scope
+from slither_matrix.slither.core.declarations.modifier import Modifier
+from slither_matrix.slither.solc_parsing.cfg.node import NodeSolc
+from slither_matrix.slither.solc_parsing.declarations.function import FunctionSolc
 
 if TYPE_CHECKING:
-    from slither.solc_parsing.declarations.contract import ContractSolc
-    from slither.solc_parsing.slither_compilation_unit_solc import SlitherCompilationUnitSolc
-    from slither.core.declarations import Function
+    from slither_matrix.slither.solc_parsing.declarations.contract import ContractSolc
+    from slither_matrix.slither.solc_parsing.slither_compilation_unit_solc import SlitherCompilationUnitSolc
+    from slither_matrix.slither.core.declarations import Function
 
 
 class ModifierSolc(FunctionSolc):

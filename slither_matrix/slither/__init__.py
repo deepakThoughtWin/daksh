@@ -1,1 +1,1 @@
-from .slither import Slither
+# from slither_matrix.slither import Slither

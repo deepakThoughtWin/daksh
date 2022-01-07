@@ -1,4 +1,4 @@
-from slither.slithir.operations.operation import Operation
+from slither_matrix.slither.slithir.operations.operation import Operation
 
 
 class Call(Operation):

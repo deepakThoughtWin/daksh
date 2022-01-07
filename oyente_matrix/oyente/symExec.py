@@ -14,14 +14,15 @@ import six
 from collections import namedtuple
 from z3 import *
 
-from vargenerator import *
-from ethereum_data import *
-from basicblock import BasicBlock
-from analysis import *
-from test_evm.global_test_params import (TIME_OUT, UNKNOWN_INSTRUCTION,
+from oyente_matrix.oyente.vargenerator import *
+from oyente_matrix.oyente.ethereum_data import *
+from oyente_matrix.oyente.basicblock import BasicBlock
+from oyente_matrix.oyente.analysis import *
+from oyente_matrix.oyente.test_evm.global_test_params import (TIME_OUT, UNKNOWN_INSTRUCTION,
                                          EXCEPTION, PICKLE_PATH)
-from vulnerability import CallStack, TimeDependency, MoneyConcurrency, Reentrancy, AssertionFailure, ParityMultisigBug2, IntegerUnderflow, IntegerOverflow
-import global_params
+from oyente_matrix.oyente.vulnerability import CallStack, TimeDependency, MoneyConcurrency, Reentrancy, AssertionFailure, ParityMultisigBug2, IntegerUnderflow, IntegerOverflow
+from oyente_matrix.oyente import global_params
+import errno
 
 log = logging.getLogger(__name__)
 

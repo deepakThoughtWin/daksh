@@ -1,9 +1,9 @@
 from typing import Optional, Tuple
 
-from slither.core.expressions import Literal
-from slither.core.expressions.expression import Expression
-from slither.core.solidity_types.type import Type
-from slither.visitors.expression.constants_folding import ConstantFolding
+from slither_matrix.slither.core.expressions import Literal
+from slither_matrix.slither.core.expressions.expression import Expression
+from slither_matrix.slither.core.solidity_types.type import Type
+from slither_matrix.slither.visitors.expression.constants_folding import ConstantFolding
 
 
 class ArrayType(Type):

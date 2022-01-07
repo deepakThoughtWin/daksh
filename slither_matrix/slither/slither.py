@@ -4,12 +4,12 @@ from typing import Union, List
 from crytic_compile import CryticCompile, InvalidCompilation
 
 # pylint: disable= no-name-in-module
-from slither.core.compilation_unit import SlitherCompilationUnit
-from slither.core.slither_core import SlitherCore
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.exceptions import SlitherError
-from slither.printers.abstract_printer import AbstractPrinter
-from slither.solc_parsing.slither_compilation_unit_solc import SlitherCompilationUnitSolc
+from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
+from slither_matrix.slither.core.slither_core import SlitherCore
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.exceptions import SlitherError
+from slither_matrix.slither.printers.abstract_printer import AbstractPrinter
+from slither_matrix.slither.solc_parsing.slither_compilation_unit_solc import SlitherCompilationUnitSolc
 
 logger = logging.getLogger("Slither")
 logging.basicConfig()

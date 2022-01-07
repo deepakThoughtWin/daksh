@@ -1,12 +1,12 @@
 """
     Module printing evm mapping of the contract
 """
-from slither.printers.abstract_printer import AbstractPrinter
-from slither.analyses.evm import (
+from slither_matrix.slither.printers.abstract_printer import AbstractPrinter
+from slither_matrix.slither.analyses.evm import (
     generate_source_to_evm_ins_mapping,
     load_evm_cfg_builder,
 )
-from slither.utils.colors import blue, green, magenta, red
+from slither_matrix.slither.utils.colors import blue, green, magenta, red
 
 
 def _extract_evm_info(slither):

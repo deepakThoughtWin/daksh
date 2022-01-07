@@ -1,13 +1,13 @@
 from typing import Union
 
-from slither.slithir.operations.call import Call
-from slither.slithir.operations.lvalue import OperationWithLValue
-from slither.core.variables.variable import Variable
-from slither.core.declarations.solidity_variables import SolidityVariable
-from slither.core.declarations.function import Function
+from slither_matrix.slither.slithir.operations.call import Call
+from slither_matrix.slither.slithir.operations.lvalue import OperationWithLValue
+from slither_matrix.slither.core.variables.variable import Variable
+from slither_matrix.slither.core.declarations.solidity_variables import SolidityVariable
+from slither_matrix.slither.core.declarations.function import Function
 
-from slither.slithir.utils.utils import is_valid_lvalue
-from slither.slithir.variables.constant import Constant
+from slither_matrix.slither.slithir.utils.utils import is_valid_lvalue
+from slither_matrix.slither.slithir.variables.constant import Constant
 
 
 class HighLevelCall(Call, OperationWithLValue):

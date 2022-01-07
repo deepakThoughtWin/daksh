@@ -2,12 +2,12 @@ import logging
 from enum import Enum
 from typing import Optional, TYPE_CHECKING, List
 
-from slither.core.expressions.expression_typed import ExpressionTyped
-from slither.core.expressions.expression import Expression
-from slither.core.exceptions import SlitherCoreError
+from slither_matrix.slither.core.expressions.expression_typed import ExpressionTyped
+from slither_matrix.slither.core.expressions.expression import Expression
+from slither_matrix.slither.core.exceptions import SlitherCoreError
 
 if TYPE_CHECKING:
-    from slither.core.solidity_types.type import Type
+    from slither_matrix.slither.core.solidity_types.type import Type
 
 logger = logging.getLogger("AssignmentOperation")
 

@@ -1,11 +1,11 @@
 from typing import TYPE_CHECKING
 
-from slither.core.children.child_node import ChildNode
-from slither.core.declarations import Contract, Enum, SolidityVariable, Function
-from slither.core.variables.variable import Variable
+from slither_matrix.slither.core.children.child_node import ChildNode
+from slither_matrix.slither.core.declarations import Contract, Enum, SolidityVariable, Function
+from slither_matrix.slither.core.variables.variable import Variable
 
 if TYPE_CHECKING:
-    from slither.core.cfg.node import Node
+    from slither_matrix.slither.core.cfg.node import Node
 
 
 class ReferenceVariable(ChildNode, Variable):
@@ -47,7 +47,7 @@ class ReferenceVariable(ChildNode, Variable):
         # Can only be a rvalue of
         # Member or Index operator
         # pylint: disable=import-outside-toplevel
-        from slither.slithir.utils.utils import is_valid_lvalue
+        from slither_matrix.slither.slithir.utils.utils import is_valid_lvalue
 
         assert is_valid_lvalue(points_to) or isinstance(
             points_to, (SolidityVariable, Contract, Enum)

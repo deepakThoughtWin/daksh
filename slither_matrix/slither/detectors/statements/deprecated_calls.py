@@ -2,14 +2,14 @@
 Module detecting deprecated standards.
 """
 
-from slither.core.cfg.node import NodeType
-from slither.core.declarations.solidity_variables import (
+from slither_matrix.slither.core.cfg.node import NodeType
+from slither_matrix.slither.core.declarations.solidity_variables import (
     SolidityVariableComposed,
     SolidityFunction,
 )
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import LowLevelCall
-from slither.visitors.expression.export_values import ExportValues
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import LowLevelCall
+from slither_matrix.slither.visitors.expression.export_values import ExportValues
 
 
 # Reference: https://smartcontractsecurity.github.io/SWC-registry/docs/SWC-111

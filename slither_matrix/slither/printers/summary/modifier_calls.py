@@ -2,9 +2,9 @@
     Module printing summary of the contract
 """
 
-from slither.core.declarations import Function
-from slither.printers.abstract_printer import AbstractPrinter
-from slither.utils.myprettytable import MyPrettyTable
+from slither_matrix.slither.core.declarations import Function
+from slither_matrix.slither.printers.abstract_printer import AbstractPrinter
+from slither_matrix.slither.utils.myprettytable import MyPrettyTable
 
 
 class Modifiers(AbstractPrinter):

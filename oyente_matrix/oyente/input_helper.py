@@ -4,10 +4,10 @@ import os
 import re
 import logging
 import json
-import global_params
+from oyente_matrix.oyente import global_params
 import six
-from source_map import SourceMap
-from utils import run_command, run_command_with_err
+from oyente_matrix.oyente.source_map import SourceMap
+from oyente_matrix.oyente.utils import run_command, run_command_with_err
 
 class InputHelper:
     BYTECODE = 0

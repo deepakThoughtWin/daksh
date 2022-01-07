@@ -2,10 +2,10 @@
 Module detecting unused return values from external calls
 """
 
-from slither.core.variables.state_variable import StateVariable
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import HighLevelCall
-from slither.core.declarations import Function
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import HighLevelCall
+from slither_matrix.slither.core.declarations import Function
 
 
 class UnusedReturnValues(AbstractDetector):

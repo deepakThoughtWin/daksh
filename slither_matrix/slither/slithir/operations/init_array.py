@@ -1,5 +1,5 @@
-from slither.slithir.operations.lvalue import OperationWithLValue
-from slither.slithir.utils.utils import is_valid_rvalue
+from slither_matrix.slither.slithir.operations.lvalue import OperationWithLValue
+from slither_matrix.slither.slithir.utils.utils import is_valid_rvalue
 
 
 class InitArray(OperationWithLValue):

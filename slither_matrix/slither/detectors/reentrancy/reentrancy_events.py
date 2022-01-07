@@ -6,7 +6,7 @@
 """
 from collections import namedtuple, defaultdict
 
-from slither.detectors.abstract_detector import DetectorClassification
+from slither_matrix.slither.detectors.abstract_detector import DetectorClassification
 from .reentrancy import Reentrancy, to_hashable
 
 FindingKey = namedtuple("FindingKey", ["function", "calls", "send_eth"])

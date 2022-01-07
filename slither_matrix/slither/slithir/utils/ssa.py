@@ -1,7 +1,7 @@
 import logging
 
-from slither.core.cfg.node import NodeType
-from slither.core.declarations import (
+from slither_matrix.slither.core.cfg.node import NodeType
+from slither_matrix.slither.core.declarations import (
     Contract,
     Enum,
     Function,
@@ -9,10 +9,10 @@ from slither.core.declarations import (
     SolidityVariable,
     Structure,
 )
-from slither.core.solidity_types.type import Type
-from slither.core.variables.local_variable import LocalVariable
-from slither.core.variables.state_variable import StateVariable
-from slither.slithir.operations import (
+from slither_matrix.slither.core.solidity_types.type import Type
+from slither_matrix.slither.core.variables.local_variable import LocalVariable
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.slithir.operations import (
     Assignment,
     Balance,
     Binary,
@@ -45,8 +45,8 @@ from slither.slithir.operations import (
     Unpack,
     Nop,
 )
-from slither.slithir.operations.codesize import CodeSize
-from slither.slithir.variables import (
+from slither_matrix.slither.slithir.operations.codesize import CodeSize
+from slither_matrix.slither.slithir.variables import (
     Constant,
     LocalIRVariable,
     ReferenceVariable,
@@ -57,7 +57,7 @@ from slither.slithir.variables import (
     TupleVariable,
     TupleVariableSSA,
 )
-from slither.slithir.exceptions import SlithIRError
+from slither_matrix.slither.slithir.exceptions import SlithIRError
 
 logger = logging.getLogger("SSA_Conversion")
 

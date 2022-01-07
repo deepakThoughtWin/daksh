@@ -1,5 +1,5 @@
-from slither.slithir.operations.lvalue import OperationWithLValue
-from slither.slithir.utils.utils import is_valid_lvalue
+from slither_matrix.slither.slithir.operations.lvalue import OperationWithLValue
+from slither_matrix.slither.slithir.utils.utils import is_valid_lvalue
 
 
 class Phi(OperationWithLValue):

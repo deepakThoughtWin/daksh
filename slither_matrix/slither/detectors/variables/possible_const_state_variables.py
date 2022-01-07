@@ -1,13 +1,13 @@
 """
 Module detecting state variables that could be declared as constant
 """
-from slither.core.compilation_unit import SlitherCompilationUnit
-from slither.core.solidity_types.elementary_type import ElementaryType
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.visitors.expression.export_values import ExportValues
-from slither.core.declarations.solidity_variables import SolidityFunction
-from slither.core.variables.state_variable import StateVariable
-from slither.formatters.variables.possible_const_state_variables import custom_format
+from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
+from slither_matrix.slither.core.solidity_types.elementary_type import ElementaryType
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.visitors.expression.export_values import ExportValues
+from slither_matrix.slither.core.declarations.solidity_variables import SolidityFunction
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.formatters.variables.possible_const_state_variables import custom_format
 
 
 class ConstCandidateStateVars(AbstractDetector):

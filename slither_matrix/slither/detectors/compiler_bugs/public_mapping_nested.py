@@ -2,10 +2,10 @@
 Module detecting public mappings with nested variables (returns incorrect values prior to 0.5.x)
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.core.solidity_types.mapping_type import MappingType
-from slither.core.solidity_types.user_defined_type import UserDefinedType
-from slither.core.declarations.structure import Structure
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.core.solidity_types.mapping_type import MappingType
+from slither_matrix.slither.core.solidity_types.user_defined_type import UserDefinedType
+from slither_matrix.slither.core.declarations.structure import Structure
 
 
 def detect_public_nested_mappings(contract):

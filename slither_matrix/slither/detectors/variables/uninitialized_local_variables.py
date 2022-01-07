@@ -5,7 +5,7 @@
     read before being written
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
 
 
 class UninitializedLocalVars(AbstractDetector):

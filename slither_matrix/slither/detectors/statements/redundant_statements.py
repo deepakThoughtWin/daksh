@@ -2,10 +2,10 @@
 Module detecting redundant statements.
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.core.cfg.node import NodeType
-from slither.core.expressions.elementary_type_name_expression import ElementaryTypeNameExpression
-from slither.core.expressions.identifier import Identifier
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.core.cfg.node import NodeType
+from slither_matrix.slither.core.expressions.elementary_type_name_expression import ElementaryTypeNameExpression
+from slither_matrix.slither.core.expressions.identifier import Identifier
 
 
 class RedundantStatements(AbstractDetector):

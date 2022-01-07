@@ -2,7 +2,7 @@
 Detect incorrect erc20 interface.
 Some contracts do not return a bool on transfer/transferFrom/approve, which may lead to preventing the contract to be used with contracts compiled with recent solc (>0.4.22)
 """
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
 
 
 class IncorrectERC20InterfaceDetection(AbstractDetector):

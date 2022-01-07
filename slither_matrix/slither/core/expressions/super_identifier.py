@@ -1,4 +1,4 @@
-from slither.core.expressions.identifier import Identifier
+from slither_matrix.slither.core.expressions.identifier import Identifier
 
 
 class SuperIdentifier(Identifier):

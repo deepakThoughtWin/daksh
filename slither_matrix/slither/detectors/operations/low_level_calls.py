@@ -2,8 +2,8 @@
 Module detecting usage of low level calls
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import LowLevelCall
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import LowLevelCall
 
 
 class LowLevelCalls(AbstractDetector):

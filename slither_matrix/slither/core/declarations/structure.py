@@ -1,9 +1,9 @@
 from typing import List, TYPE_CHECKING, Dict
 
-from slither.core.source_mapping.source_mapping import SourceMapping
+from slither_matrix.slither.core.source_mapping.source_mapping import SourceMapping
 
 if TYPE_CHECKING:
-    from slither.core.variables.structure_variable import StructureVariable
+    from slither_matrix.slither.core.variables.structure_variable import StructureVariable
 
 
 class Structure(SourceMapping):

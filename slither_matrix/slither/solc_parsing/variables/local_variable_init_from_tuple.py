@@ -1,7 +1,7 @@
 from typing import Dict
 
-from slither.solc_parsing.variables.variable_declaration import VariableDeclarationSolc
-from slither.core.variables.local_variable_init_from_tuple import LocalVariableInitFromTuple
+from slither_matrix.slither.solc_parsing.variables.variable_declaration import VariableDeclarationSolc
+from slither_matrix.slither.core.variables.local_variable_init_from_tuple import LocalVariableInitFromTuple
 
 
 class LocalVariableInitFromTupleSolc(VariableDeclarationSolc):

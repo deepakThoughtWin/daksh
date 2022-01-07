@@ -1,4 +1,4 @@
-from slither.printers.abstract_printer import AbstractPrinter
+from slither_matrix.slither.printers.abstract_printer import AbstractPrinter
 
 
 class CFG(AbstractPrinter):

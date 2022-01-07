@@ -2,8 +2,8 @@
 Module detecting constant functions
 Recursively check the called functions
 """
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.formatters.attributes.const_functions import custom_format
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.formatters.attributes.const_functions import custom_format
 
 
 class ConstantFunctionsState(AbstractDetector):

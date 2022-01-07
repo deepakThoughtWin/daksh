@@ -1,8 +1,8 @@
-from slither.core.declarations import Function
-from slither.slithir.operations.operation import Operation
+from slither_matrix.slither.core.declarations import Function
+from slither_matrix.slither.slithir.operations.operation import Operation
 
-from slither.slithir.variables.tuple import TupleVariable
-from slither.slithir.utils.utils import is_valid_rvalue
+from slither_matrix.slither.slithir.variables.tuple import TupleVariable
+from slither_matrix.slither.slithir.utils.utils import is_valid_rvalue
 
 
 class Return(Operation):

@@ -1,7 +1,7 @@
 from typing import Dict
 
-from slither.solc_parsing.variables.variable_declaration import VariableDeclarationSolc
-from slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.solc_parsing.variables.variable_declaration import VariableDeclarationSolc
+from slither_matrix.slither.core.variables.state_variable import StateVariable
 
 
 class StateVariableSolc(VariableDeclarationSolc):

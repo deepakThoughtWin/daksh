@@ -3,7 +3,7 @@ import difflib
 from typing import Dict, Tuple, Union
 from collections import defaultdict
 
-from slither.core.compilation_unit import SlitherCompilationUnit
+from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
 
 # pylint: disable=too-many-arguments
 def create_patch(

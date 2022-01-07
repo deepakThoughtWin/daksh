@@ -1,10 +1,10 @@
 from decimal import Decimal
 from functools import total_ordering
 
-from slither.core.solidity_types.elementary_type import ElementaryType, Int, Uint
-from slither.slithir.variables.variable import SlithIRVariable
-from slither.utils.arithmetic import convert_subdenomination
-from slither.utils.integer_conversion import convert_string_to_int
+from slither_matrix.slither.core.solidity_types.elementary_type import ElementaryType, Int, Uint
+from slither_matrix.slither.slithir.variables.variable import SlithIRVariable
+from slither_matrix.slither.utils.arithmetic import convert_subdenomination
+from slither_matrix.slither.utils.integer_conversion import convert_string_to_int
 
 
 @total_ordering

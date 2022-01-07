@@ -1,10 +1,10 @@
 from typing import Optional, Union, TYPE_CHECKING
 
-from slither.core.expressions.expression import Expression
-from slither.utils.arithmetic import convert_subdenomination
+from slither_matrix.slither.core.expressions.expression import Expression
+from slither_matrix.slither.utils.arithmetic import convert_subdenomination
 
 if TYPE_CHECKING:
-    from slither.core.solidity_types.type import Type
+    from slither_matrix.slither.core.solidity_types.type import Type
 
 
 class Literal(Expression):

@@ -6,10 +6,10 @@
     The output is a dot file named filename.dot
 """
 
-from slither.core.declarations.contract import Contract
-from slither.core.solidity_types.user_defined_type import UserDefinedType
-from slither.printers.abstract_printer import AbstractPrinter
-from slither.utils.inheritance_analysis import (
+from slither_matrix.slither.core.declarations.contract import Contract
+from slither_matrix.slither.core.solidity_types.user_defined_type import UserDefinedType
+from slither_matrix.slither.printers.abstract_printer import AbstractPrinter
+from slither_matrix.slither.utils.inheritance_analysis import (
     detect_c3_function_shadowing,
     detect_state_variable_shadowing,
 )

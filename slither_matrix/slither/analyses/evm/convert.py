@@ -1,9 +1,9 @@
 import logging
-from slither.core.declarations import Contract, Function
-from slither.core.cfg.node import Node
-from slither.utils.function import get_function_id
-from slither.exceptions import SlitherError
-from slither.analyses.evm.evm_cfg_builder import load_evm_cfg_builder
+from slither_matrix.slither.core.declarations import Contract, Function
+from slither_matrix.slither.core.cfg.node import Node
+from slither_matrix.slither.utils.function import get_function_id
+from slither_matrix.slither.exceptions import SlitherError
+from slither_matrix.slither.analyses.evm.evm_cfg_builder import load_evm_cfg_builder
 
 logger = logging.getLogger("ConvertToEVM")
 

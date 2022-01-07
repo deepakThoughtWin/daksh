@@ -4,8 +4,8 @@
     The inheritance shows the relation between the contracts
 """
 
-from slither.printers.abstract_printer import AbstractPrinter
-from slither.utils.colors import blue, green
+from slither_matrix.slither.printers.abstract_printer import AbstractPrinter
+from slither_matrix.slither.utils.colors import blue, green
 
 
 class PrinterInheritance(AbstractPrinter):

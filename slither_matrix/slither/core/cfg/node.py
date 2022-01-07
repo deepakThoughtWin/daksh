@@ -4,18 +4,18 @@
 from enum import Enum
 from typing import Optional, List, Set, Dict, Tuple, Union, TYPE_CHECKING
 
-from slither.core.children.child_function import ChildFunction
-from slither.core.declarations.solidity_variables import (
+from slither_matrix.slither.core.children.child_function import ChildFunction
+from slither_matrix.slither.core.declarations.solidity_variables import (
     SolidityVariable,
     SolidityFunction,
 )
-from slither.core.source_mapping.source_mapping import SourceMapping
-from slither.core.variables.local_variable import LocalVariable
-from slither.core.variables.state_variable import StateVariable
-from slither.core.variables.variable import Variable
-from slither.core.solidity_types import ElementaryType
-from slither.slithir.convert import convert_expression
-from slither.slithir.operations import (
+from slither_matrix.slither.core.source_mapping.source_mapping import SourceMapping
+from slither_matrix.slither.core.variables.local_variable import LocalVariable
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.core.variables.variable import Variable
+from slither_matrix.slither.core.solidity_types import ElementaryType
+from slither_matrix.slither.slithir.convert import convert_expression
+from slither_matrix.slither.slithir.operations import (
     Balance,
     HighLevelCall,
     Index,
@@ -31,7 +31,7 @@ from slither.slithir.operations import (
     Return,
     Operation,
 )
-from slither.slithir.variables import (
+from slither_matrix.slither.slithir.variables import (
     Constant,
     LocalIRVariable,
     ReferenceVariable,
@@ -39,22 +39,22 @@ from slither.slithir.variables import (
     TemporaryVariable,
     TupleVariable,
 )
-from slither.all_exceptions import SlitherException
-from slither.core.declarations import Contract
+from slither_matrix.slither.all_exceptions import SlitherException
+from slither_matrix.slither.core.declarations import Contract
 
-from slither.core.expressions.expression import Expression
+from slither_matrix.slither.core.expressions.expression import Expression
 
 if TYPE_CHECKING:
-    from slither.core.declarations import Function
-    from slither.slithir.variables.variable import SlithIRVariable
-    from slither.core.compilation_unit import SlitherCompilationUnit
-    from slither.utils.type_helpers import (
+    from slither_matrix.slither.core.declarations import Function
+    from slither_matrix.slither.slithir.variables.variable import SlithIRVariable
+    from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
+    from slither_matrix.slither.utils.type_helpers import (
         InternalCallType,
         HighLevelCallType,
         LibraryCallType,
         LowLevelCallType,
     )
-    from slither.core.cfg.scope import Scope
+    from slither_matrix.slither.core.cfg.scope import Scope
 
 
 # pylint: disable=too-many-lines,too-many-branches,too-many-instance-attributes
@@ -466,7 +466,7 @@ class Node(SourceMapping, ChildFunction):  # pylint: disable=too-many-public-met
         :return bool:
         """
         # pylint: disable=import-outside-toplevel
-        from slither.slithir.operations import Call
+        from slither_matrix.slither.slithir.operations import Call
 
         if self._can_reenter is None:
             self._can_reenter = False
@@ -482,7 +482,7 @@ class Node(SourceMapping, ChildFunction):  # pylint: disable=too-many-public-met
         :return bool:
         """
         # pylint: disable=import-outside-toplevel
-        from slither.slithir.operations import Call
+        from slither_matrix.slither.slithir.operations import Call
 
         if self._can_send_eth is None:
             self._can_send_eth = False

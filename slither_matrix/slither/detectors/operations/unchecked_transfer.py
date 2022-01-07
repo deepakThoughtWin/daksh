@@ -2,10 +2,10 @@
 Module detecting unused transfer/transferFrom return values from external calls
 """
 
-from slither.core.declarations import Function
-from slither.detectors.abstract_detector import DetectorClassification
-from slither.detectors.operations.unused_return_values import UnusedReturnValues
-from slither.slithir.operations import HighLevelCall
+from slither_matrix.slither.core.declarations import Function
+from slither_matrix.slither.detectors.abstract_detector import DetectorClassification
+from slither_matrix.slither.detectors.operations.unused_return_values import UnusedReturnValues
+from slither_matrix.slither.slithir.operations import HighLevelCall
 
 
 class UncheckedTransfer(UnusedReturnValues):

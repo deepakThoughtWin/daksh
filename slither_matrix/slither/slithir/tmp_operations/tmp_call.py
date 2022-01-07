@@ -1,12 +1,12 @@
-from slither.core.declarations import (
+from slither_matrix.slither.core.declarations import (
     Event,
     Contract,
     SolidityVariableComposed,
     SolidityFunction,
     Structure,
 )
-from slither.core.variables.variable import Variable
-from slither.slithir.operations.lvalue import OperationWithLValue
+from slither_matrix.slither.core.variables.variable import Variable
+from slither_matrix.slither.slithir.operations.lvalue import OperationWithLValue
 
 
 class TmpCall(OperationWithLValue):  # pylint: disable=too-many-instance-attributes

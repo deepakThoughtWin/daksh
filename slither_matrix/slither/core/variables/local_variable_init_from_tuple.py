@@ -1,6 +1,6 @@
 from typing import Optional
 
-from slither.core.variables.local_variable import LocalVariable
+from slither_matrix.slither.core.variables.local_variable import LocalVariable
 
 
 class LocalVariableInitFromTuple(LocalVariable):

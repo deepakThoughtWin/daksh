@@ -1,12 +1,12 @@
 from typing import Optional, TYPE_CHECKING, Tuple, List
 
-from slither.core.variables.variable import Variable
-from slither.core.children.child_contract import ChildContract
-from slither.utils.type import export_nested_types_from_variable
+from slither_matrix.slither.core.variables.variable import Variable
+from slither_matrix.slither.core.children.child_contract import ChildContract
+from slither_matrix.slither.utils.type import export_nested_types_from_variable
 
 if TYPE_CHECKING:
-    from slither.core.cfg.node import Node
-    from slither.core.declarations import Contract
+    from slither_matrix.slither.core.cfg.node import Node
+    from slither_matrix.slither.core.declarations import Contract
 
 
 class StateVariable(ChildContract, Variable):

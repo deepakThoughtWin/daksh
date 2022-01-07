@@ -1,8 +1,8 @@
-from slither.core.declarations import Modifier
-from slither.core.declarations.function import Function
-from slither.core.declarations.function_contract import FunctionContract
-from slither.slithir.operations.call import Call
-from slither.slithir.operations.lvalue import OperationWithLValue
+from slither_matrix.slither.core.declarations import Modifier
+from slither_matrix.slither.core.declarations.function import Function
+from slither_matrix.slither.core.declarations.function_contract import FunctionContract
+from slither_matrix.slither.slithir.operations.call import Call
+from slither_matrix.slither.slithir.operations.lvalue import OperationWithLValue
 
 
 class InternalCall(Call, OperationWithLValue):  # pylint: disable=too-many-instance-attributes

@@ -1,7 +1,7 @@
 from decimal import Decimal
 from typing import Union
 
-from slither.exceptions import SlitherError
+from slither_matrix.slither.exceptions import SlitherError
 
 
 def convert_string_to_int(val: Union[str, int]) -> int:

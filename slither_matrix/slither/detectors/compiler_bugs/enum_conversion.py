@@ -2,9 +2,9 @@
 Module detecting dangerous conversion to enum
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import TypeConversion
-from slither.core.declarations.enum import Enum
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import TypeConversion
+from slither_matrix.slither.core.declarations.enum import Enum
 
 
 def _uses_vulnerable_solc_version(version):

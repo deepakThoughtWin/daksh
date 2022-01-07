@@ -6,10 +6,10 @@
     The output is a dot file named filename.dot
 """
 from collections import defaultdict
-from slither.printers.abstract_printer import AbstractPrinter
-from slither.core.declarations.solidity_variables import SolidityFunction
-from slither.core.declarations.function import Function
-from slither.core.variables.variable import Variable
+from slither_matrix.slither.printers.abstract_printer import AbstractPrinter
+from slither_matrix.slither.core.declarations.solidity_variables import SolidityFunction
+from slither_matrix.slither.core.declarations.function import Function
+from slither_matrix.slither.core.variables.variable import Variable
 
 
 def _contract_subgraph(contract):

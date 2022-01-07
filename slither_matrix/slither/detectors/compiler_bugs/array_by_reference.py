@@ -2,12 +2,12 @@
 Detects the passing of arrays located in memory to functions which expect to modify arrays via storage reference.
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.core.solidity_types.array_type import ArrayType
-from slither.core.variables.state_variable import StateVariable
-from slither.core.variables.local_variable import LocalVariable
-from slither.slithir.operations.high_level_call import HighLevelCall
-from slither.slithir.operations.internal_call import InternalCall
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.core.solidity_types.array_type import ArrayType
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.core.variables.local_variable import LocalVariable
+from slither_matrix.slither.slithir.operations.high_level_call import HighLevelCall
+from slither_matrix.slither.slithir.operations.internal_call import InternalCall
 
 
 class ArrayByReference(AbstractDetector):

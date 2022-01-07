@@ -4,15 +4,15 @@ import os
 import re
 import six
 import json
-import symExec
+from oyente_matrix.oyente import symExec
 import logging
 import requests
 import argparse
 import subprocess
-import global_params
-from utils import run_command
-from input_helper import InputHelper
-from args_parser import manual_args
+from oyente_matrix.oyente import global_params
+from oyente_matrix.oyente.utils import run_command
+from oyente_matrix.oyente.input_helper import InputHelper
+from oyente_matrix.oyente.args_parser import manual_args
 def cmd_exists(cmd):
     return subprocess.call("type " + cmd, shell=True,
                            stdout=subprocess.PIPE, stderr=subprocess.PIPE) == 0
@@ -90,7 +90,7 @@ def run_solidity_analysis(inputs):
             results[c_source][c_name] = result
         except:
             results[c_source] = {c_name: result}
-            print(results)
+            print(results,'-----------------line 93 oyente.py')
         if return_code == 1:
             exit_code = 1
     return results, exit_code
@@ -214,7 +214,7 @@ def main(filename):
     else:
         exit_code = analyze_solidity()
 
-    exit(exit_code)
+    # exit(exit_code)
 
 if __name__ == '__main__':
     main()

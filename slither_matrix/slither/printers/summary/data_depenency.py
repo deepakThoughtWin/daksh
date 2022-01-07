@@ -2,10 +2,10 @@
     Module printing summary of the contract
 """
 
-from slither.printers.abstract_printer import AbstractPrinter
-from slither.analyses.data_dependency.data_dependency import get_dependencies
-from slither.slithir.variables import TemporaryVariable, ReferenceVariable
-from slither.utils.myprettytable import MyPrettyTable
+from slither_matrix.slither.printers.abstract_printer import AbstractPrinter
+from slither_matrix.slither.analyses.data_dependency.data_dependency import get_dependencies
+from slither_matrix.slither.slithir.variables import TemporaryVariable, ReferenceVariable
+from slither_matrix.slither.utils.myprettytable import MyPrettyTable
 
 
 def _get(v, c):

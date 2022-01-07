@@ -2,8 +2,8 @@
     Check if ethers are locked in the contract
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import (
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import (
     HighLevelCall,
     LowLevelCall,
     Send,

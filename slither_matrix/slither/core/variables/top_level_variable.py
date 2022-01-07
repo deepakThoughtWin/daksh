@@ -1,10 +1,10 @@
 from typing import Optional, TYPE_CHECKING
 
-from slither.core.declarations.top_level import TopLevel
-from slither.core.variables.variable import Variable
+from slither_matrix.slither.core.declarations.top_level import TopLevel
+from slither_matrix.slither.core.variables.variable import Variable
 
 if TYPE_CHECKING:
-    from slither.core.cfg.node import Node
+    from slither_matrix.slither.core.cfg.node import Node
 
 
 class TopLevelVariable(TopLevel, Variable):

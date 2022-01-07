@@ -1,8 +1,8 @@
 import abc
-from slither.core.context.context import Context
-from slither.core.children.child_expression import ChildExpression
-from slither.core.children.child_node import ChildNode
-from slither.utils.utils import unroll
+from slither_matrix.slither.core.context.context import Context
+from slither_matrix.slither.core.children.child_expression import ChildExpression
+from slither_matrix.slither.core.children.child_node import ChildNode
+from slither_matrix.slither.utils.utils import unroll
 
 
 class AbstractOperation(abc.ABC):

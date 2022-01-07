@@ -1,12 +1,12 @@
 # https://solidity.readthedocs.io/en/v0.4.24/units-and-global-variables.html
 from typing import List, Dict, Union, TYPE_CHECKING
 
-from slither.core.context.context import Context
-from slither.core.solidity_types import ElementaryType, TypeInformation
-from slither.exceptions import SlitherException
+from slither_matrix.slither.core.context.context import Context
+from slither_matrix.slither.core.solidity_types import ElementaryType, TypeInformation
+from slither_matrix.slither.exceptions import SlitherException
 
 if TYPE_CHECKING:
-    from slither.core.declarations import Import
+    from slither_matrix.slither.core.declarations import Import
 
 SOLIDITY_VARIABLES = {
     "now": "uint256",

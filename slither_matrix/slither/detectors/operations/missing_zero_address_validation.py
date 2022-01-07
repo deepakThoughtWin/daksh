@@ -4,11 +4,11 @@ Module detecting missing zero address validation
 """
 from collections import defaultdict
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.analyses.data_dependency.data_dependency import is_tainted
-from slither.core.solidity_types.elementary_type import ElementaryType
-from slither.slithir.operations import Send, Transfer, LowLevelCall
-from slither.slithir.operations import Call
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.analyses.data_dependency.data_dependency import is_tainted
+from slither_matrix.slither.core.solidity_types.elementary_type import ElementaryType
+from slither_matrix.slither.slithir.operations import Send, Transfer, LowLevelCall
+from slither_matrix.slither.slithir.operations import Call
 
 
 class MissingZeroAddressValidation(AbstractDetector):

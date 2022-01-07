@@ -1,8 +1,8 @@
 """
 Module detecting state changes in assert calls
 """
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations.internal_call import InternalCall
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations.internal_call import InternalCall
 
 
 def detect_assert_state_change(contract):

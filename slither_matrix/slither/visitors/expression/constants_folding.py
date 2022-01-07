@@ -1,6 +1,6 @@
-from slither.core.expressions import BinaryOperationType, Literal
-from slither.utils.integer_conversion import convert_string_to_int
-from slither.visitors.expression.expression import ExpressionVisitor
+from slither_matrix.slither.core.expressions import BinaryOperationType, Literal
+from slither_matrix.slither.utils.integer_conversion import convert_string_to_int
+from slither_matrix.slither.visitors.expression.expression import ExpressionVisitor
 
 
 class NotConstant(Exception):

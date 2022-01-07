@@ -1,9 +1,9 @@
-from slither.core.declarations import Contract, Function
-from slither.core.declarations.enum import Enum
-from slither.slithir.operations.lvalue import OperationWithLValue
-from slither.slithir.utils.utils import is_valid_rvalue
-from slither.slithir.variables.constant import Constant
-from slither.slithir.variables.reference import ReferenceVariable
+from slither_matrix.slither.core.declarations import Contract, Function
+from slither_matrix.slither.core.declarations.enum import Enum
+from slither_matrix.slither.slithir.operations.lvalue import OperationWithLValue
+from slither_matrix.slither.slithir.utils.utils import is_valid_rvalue
+from slither_matrix.slither.slithir.variables.constant import Constant
+from slither_matrix.slither.slithir.variables.reference import ReferenceVariable
 
 
 class Member(OperationWithLValue):

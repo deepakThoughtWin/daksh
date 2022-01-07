@@ -1,7 +1,7 @@
 import abc
 from typing import Tuple
 
-from slither.core.source_mapping.source_mapping import SourceMapping
+from slither_matrix.slither.core.source_mapping.source_mapping import SourceMapping
 
 
 class Type(SourceMapping, metaclass=abc.ABCMeta):

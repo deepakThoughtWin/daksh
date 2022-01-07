@@ -1,12 +1,12 @@
 """
 Module detecting unused state variables
 """
-from slither.core.compilation_unit import SlitherCompilationUnit
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.core.solidity_types import ArrayType
-from slither.visitors.expression.export_values import ExportValues
-from slither.core.variables.state_variable import StateVariable
-from slither.formatters.variables.unused_state_variables import custom_format
+from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.core.solidity_types import ArrayType
+from slither_matrix.slither.visitors.expression.export_values import ExportValues
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.formatters.variables.unused_state_variables import custom_format
 
 
 def detect_unused(contract):

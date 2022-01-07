@@ -3,10 +3,10 @@
 
 """
 
-from slither.analyses.data_dependency.data_dependency import is_dependent_ssa
-from slither.core.declarations import Function
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import (
+from slither_matrix.slither.analyses.data_dependency.data_dependency import is_dependent_ssa
+from slither_matrix.slither.core.declarations import Function
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import (
     Assignment,
     Balance,
     Binary,
@@ -14,10 +14,10 @@ from slither.slithir.operations import (
     HighLevelCall,
 )
 
-from slither.core.solidity_types import MappingType, ElementaryType
+from slither_matrix.slither.core.solidity_types import MappingType, ElementaryType
 
-from slither.core.variables.state_variable import StateVariable
-from slither.core.declarations.solidity_variables import (
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.core.declarations.solidity_variables import (
     SolidityVariable,
     SolidityVariableComposed,
 )

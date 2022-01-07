@@ -3,10 +3,10 @@ Module detecting missing events for critical contract parameters set by owners a
 
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.analyses.data_dependency.data_dependency import is_tainted
-from slither.slithir.operations.event_call import EventCall
-from slither.core.solidity_types.elementary_type import ElementaryType, Int, Uint
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.analyses.data_dependency.data_dependency import is_tainted
+from slither_matrix.slither.slithir.operations.event_call import EventCall
+from slither_matrix.slither.core.solidity_types.elementary_type import ElementaryType, Int, Uint
 
 
 class MissingEventsArithmetic(AbstractDetector):

@@ -1,7 +1,7 @@
-from slither.core.expressions.expression import Expression
-from slither.core.expressions.expression_typed import ExpressionTyped
+from slither_matrix.slither.core.expressions.expression import Expression
+from slither_matrix.slither.core.expressions.expression_typed import ExpressionTyped
 
-from slither.core.solidity_types.type import Type
+from slither_matrix.slither.core.solidity_types.type import Type
 
 
 class MemberAccess(ExpressionTyped):

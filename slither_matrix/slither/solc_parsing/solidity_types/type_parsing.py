@@ -2,25 +2,25 @@ import logging
 import re
 from typing import List, TYPE_CHECKING, Union, Dict
 
-from slither.core.declarations.function_contract import FunctionContract
-from slither.core.expressions.literal import Literal
-from slither.core.solidity_types.array_type import ArrayType
-from slither.core.solidity_types.elementary_type import (
+from slither_matrix.slither.core.declarations.function_contract import FunctionContract
+from slither_matrix.slither.core.expressions.literal import Literal
+from slither_matrix.slither.core.solidity_types.array_type import ArrayType
+from slither_matrix.slither.core.solidity_types.elementary_type import (
     ElementaryType,
     ElementaryTypeName,
 )
-from slither.core.solidity_types.function_type import FunctionType
-from slither.core.solidity_types.mapping_type import MappingType
-from slither.core.solidity_types.type import Type
-from slither.core.solidity_types.user_defined_type import UserDefinedType
-from slither.core.variables.function_type_variable import FunctionTypeVariable
-from slither.exceptions import SlitherError
-from slither.solc_parsing.exceptions import ParsingError
+from slither_matrix.slither.core.solidity_types.function_type import FunctionType
+from slither_matrix.slither.core.solidity_types.mapping_type import MappingType
+from slither_matrix.slither.core.solidity_types.type import Type
+from slither_matrix.slither.core.solidity_types.user_defined_type import UserDefinedType
+from slither_matrix.slither.core.variables.function_type_variable import FunctionTypeVariable
+from slither_matrix.slither.exceptions import SlitherError
+from slither_matrix.slither.solc_parsing.exceptions import ParsingError
 
 if TYPE_CHECKING:
-    from slither.core.declarations import Structure, Enum
-    from slither.core.declarations.contract import Contract
-    from slither.core.compilation_unit import SlitherCompilationUnit
+    from slither_matrix.slither.core.declarations import Structure, Enum
+    from slither_matrix.slither.core.declarations.contract import Contract
+    from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
 
 logger = logging.getLogger("TypeParsing")
 
@@ -194,11 +194,11 @@ def parse_type(t: Union[Dict, UnknownType], caller_context):
     # local import to avoid circular dependency
     # pylint: disable=too-many-locals,too-many-branches,too-many-statements
     # pylint: disable=import-outside-toplevel
-    from slither.solc_parsing.expressions.expression_parsing import parse_expression
-    from slither.solc_parsing.variables.function_type_variable import FunctionTypeVariableSolc
-    from slither.solc_parsing.declarations.contract import ContractSolc
-    from slither.solc_parsing.declarations.function import FunctionSolc
-    from slither.solc_parsing.slither_compilation_unit_solc import SlitherCompilationUnitSolc
+    from slither_matrix.slither.solc_parsing.expressions.expression_parsing import parse_expression
+    from slither_matrix.slither.solc_parsing.variables.function_type_variable import FunctionTypeVariableSolc
+    from slither_matrix.slither.solc_parsing.declarations.contract import ContractSolc
+    from slither_matrix.slither.solc_parsing.declarations.function import FunctionSolc
+    from slither_matrix.slither.solc_parsing.slither_compilation_unit_solc import SlitherCompilationUnitSolc
 
     sl: "SlitherCompilationUnit"
     # Note: for convenicence top level functions use the same parser than function in contract

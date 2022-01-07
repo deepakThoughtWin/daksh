@@ -1,10 +1,10 @@
 from typing import TYPE_CHECKING
 
-from slither.core.children.child_contract import ChildContract
-from slither.core.declarations import Enum
+from slither_matrix.slither.core.children.child_contract import ChildContract
+from slither_matrix.slither.core.declarations import Enum
 
 if TYPE_CHECKING:
-    from slither.core.declarations import Contract
+    from slither_matrix.slither.core.declarations import Contract
 
 
 class EnumContract(Enum, ChildContract):

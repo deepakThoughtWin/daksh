@@ -1,10 +1,10 @@
 import re
 from typing import Dict, Union, Optional, List, Tuple, TYPE_CHECKING
 
-from slither.core.context.context import Context
+from slither_matrix.slither.core.context.context import Context
 
 if TYPE_CHECKING:
-    from slither.core.compilation_unit import SlitherCompilationUnit
+    from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
 
 
 class SourceMapping(Context):

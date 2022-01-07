@@ -2,9 +2,9 @@
     Module printing summary of the contract
 """
 import collections
-from slither.printers.abstract_printer import AbstractPrinter
-from slither.utils import output
-from slither.utils.colors import blue, green, magenta
+from slither_matrix.slither.printers.abstract_printer import AbstractPrinter
+from slither_matrix.slither.utils import output
+from slither_matrix.slither.utils.colors import blue, green, magenta
 
 
 class ContractSummary(AbstractPrinter):

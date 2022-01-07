@@ -1,8 +1,8 @@
 from typing import List, Union
 
-from slither.core.solidity_types import ArrayType, MappingType, ElementaryType
-from slither.core.solidity_types.type import Type
-from slither.core.variables.variable import Variable
+from slither_matrix.slither.core.solidity_types import ArrayType, MappingType, ElementaryType
+from slither_matrix.slither.core.solidity_types.type import Type
+from slither_matrix.slither.core.variables.variable import Variable
 
 
 def _add_mapping_parameter(t: Type, l: List[Type]):

@@ -8,42 +8,42 @@ from enum import Enum
 from itertools import groupby
 from typing import Dict, TYPE_CHECKING, List, Optional, Set, Union, Callable, Tuple
 
-from slither.core.cfg.scope import Scope
-from slither.core.declarations.solidity_variables import (
+from slither_matrix.slither.core.cfg.scope import Scope
+from slither_matrix.slither.core.declarations.solidity_variables import (
     SolidityFunction,
     SolidityVariable,
     SolidityVariableComposed,
 )
-from slither.core.expressions import (
+from slither_matrix.slither.core.expressions import (
     Identifier,
     IndexAccess,
     MemberAccess,
     UnaryOperation,
 )
-from slither.core.solidity_types import UserDefinedType
-from slither.core.solidity_types.type import Type
-from slither.core.source_mapping.source_mapping import SourceMapping
-from slither.core.variables.local_variable import LocalVariable
-from slither.core.variables.state_variable import StateVariable
-from slither.utils.utils import unroll
+from slither_matrix.slither.core.solidity_types import UserDefinedType
+from slither_matrix.slither.core.solidity_types.type import Type
+from slither_matrix.slither.core.source_mapping.source_mapping import SourceMapping
+from slither_matrix.slither.core.variables.local_variable import LocalVariable
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.utils.utils import unroll
 
 # pylint: disable=import-outside-toplevel,too-many-instance-attributes,too-many-statements,too-many-lines
 
 if TYPE_CHECKING:
-    from slither.utils.type_helpers import (
+    from slither_matrix.slither.utils.type_helpers import (
         InternalCallType,
         LowLevelCallType,
         HighLevelCallType,
         LibraryCallType,
     )
-    from slither.core.declarations import Contract
-    from slither.core.cfg.node import Node, NodeType
-    from slither.core.variables.variable import Variable
-    from slither.slithir.variables.variable import SlithIRVariable
-    from slither.slithir.variables import LocalIRVariable
-    from slither.core.expressions.expression import Expression
-    from slither.slithir.operations import Operation
-    from slither.core.compilation_unit import SlitherCompilationUnit
+    from slither_matrix.slither.core.declarations import Contract
+    from slither_matrix.slither.core.cfg.node import Node, NodeType
+    from slither_matrix.slither.core.variables.variable import Variable
+    from slither_matrix.slither.slithir.variables.variable import SlithIRVariable
+    from slither_matrix.slither.slithir.variables import LocalIRVariable
+    from slither_matrix.slither.core.expressions.expression import Expression
+    from slither_matrix.slither.slithir.operations import Operation
+    from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
 
 LOGGER = logging.getLogger("Function")
 ReacheableNode = namedtuple("ReacheableNode", ["node", "ir"])
@@ -289,7 +289,7 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
         :param callstack: used internally to check for recursion
         :return bool:
         """
-        from slither.slithir.operations import Call
+        from slither_matrix.slither.slithir.operations import Call
 
         if self._can_reenter is None:
             self._can_reenter = False
@@ -304,7 +304,7 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
         Check if the function or any internal (not external) functions called by it can send eth
         :return bool:
         """
-        from slither.slithir.operations import Call
+        from slither_matrix.slither.slithir.operations import Call
 
         if self._can_send_eth is None:
             self._can_send_eth = False
@@ -525,7 +525,7 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
     def nodes_ordered_dominators(self) -> List["Node"]:
         # TODO: does not work properly; most likely due to modifier call
         # This will not work for modifier call that lead to multiple nodes
-        # from slither.core.cfg.node import NodeType
+        # from slither_matrix.slither.core.cfg.node import NodeType
         if self._nodes_ordered_dominators is None:
             self._nodes_ordered_dominators = []
             if self.entry_point:
@@ -845,9 +845,9 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
         """
         list(Return Values): List of the return values
         """
-        from slither.core.cfg.node import NodeType
-        from slither.slithir.operations import Return
-        from slither.slithir.variables import Constant
+        from slither_matrix.slither.core.cfg.node import NodeType
+        from slither_matrix.slither.slithir.operations import Return
+        from slither_matrix.slither.slithir.variables import Constant
 
         if self._return_values is None:
             return_values = list()
@@ -866,9 +866,9 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
         """
         list(Return Values in SSA form): List of the return values in ssa form
         """
-        from slither.core.cfg.node import NodeType
-        from slither.slithir.operations import Return
-        from slither.slithir.variables import Constant
+        from slither_matrix.slither.core.cfg.node import NodeType
+        from slither_matrix.slither.slithir.operations import Return
+        from slither_matrix.slither.slithir.variables import Constant
 
         if self._return_values_ssa is None:
             return_values_ssa = list()
@@ -922,7 +922,7 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
 
     @staticmethod
     def _convert_type_for_solidity_signature(t: Type):
-        from slither.core.declarations import Contract
+        from slither_matrix.slither.core.declarations import Contract
 
         if isinstance(t, UserDefinedType) and isinstance(t.type, Contract):
             return "address"
@@ -1149,7 +1149,7 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
 
     @staticmethod
     def _solidity_variable_in_binary(node: "Node") -> List[SolidityVariable]:
-        from slither.slithir.operations.binary import Binary
+        from slither_matrix.slither.slithir.operations.binary import Binary
 
         ret = []
         for ir in node.irs:
@@ -1193,7 +1193,7 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
 
     @staticmethod
     def _solidity_variable_in_internal_calls(node: "Node") -> List[SolidityVariable]:
-        from slither.slithir.operations.internal_call import InternalCall
+        from slither_matrix.slither.slithir.operations.internal_call import InternalCall
 
         ret = []
         for ir in node.irs:
@@ -1230,7 +1230,7 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
         """
             Apply a visitor to all the function expressions
         Args:
-            Visitor: slither.visitors
+            Visitor: slither_matrix.slither.visitors
         Returns
             list(): results of the visit
         """
@@ -1319,7 +1319,7 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
         :return: the DOT content
         :rtype: str
         """
-        from slither.core.cfg.node import NodeType
+        from slither_matrix.slither.core.cfg.node import NodeType
 
         content = ""
         content += "digraph{\n"
@@ -1541,7 +1541,7 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
     def new_node(
         self, node_type: "NodeType", src: Union[str, Dict], scope: Union[Scope, "Function"]
     ) -> "Node":
-        from slither.core.cfg.node import Node
+        from slither_matrix.slither.core.cfg.node import Node
 
         node = Node(node_type, self._counter_nodes, scope)
         node.set_offset(src, self.compilation_unit)
@@ -1562,9 +1562,9 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
         self, target_state: bool, target_local: bool
     ) -> Dict[str, Set["SlithIRVariable"]]:
         # pylint: disable=too-many-locals,too-many-branches
-        from slither.slithir.variables import ReferenceVariable
-        from slither.slithir.operations import OperationWithLValue
-        from slither.core.cfg.node import NodeType
+        from slither_matrix.slither.slithir.variables import ReferenceVariable
+        from slither_matrix.slither.slithir.operations import OperationWithLValue
+        from slither_matrix.slither.core.cfg.node import NodeType
 
         if not self.is_implemented:
             return dict()
@@ -1629,7 +1629,7 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
 
     @staticmethod
     def _unchange_phi(ir: "Operation"):
-        from slither.slithir.operations import Phi, PhiCallback
+        from slither_matrix.slither.slithir.operations import Phi, PhiCallback
 
         if not isinstance(ir, (Phi, PhiCallback)) or len(ir.rvalues) > 1:
             return False
@@ -1638,8 +1638,8 @@ class Function(SourceMapping, metaclass=ABCMeta):  # pylint: disable=too-many-pu
         return ir.rvalues[0] == ir.lvalue
 
     def fix_phi(self, last_state_variables_instances, initial_state_variables_instances):
-        from slither.slithir.operations import InternalCall, PhiCallback
-        from slither.slithir.variables import Constant, StateIRVariable
+        from slither_matrix.slither.slithir.operations import InternalCall, PhiCallback
+        from slither_matrix.slither.slithir.variables import Constant, StateIRVariable
 
         for node in self.nodes:
             for ir in node.irs_ssa:

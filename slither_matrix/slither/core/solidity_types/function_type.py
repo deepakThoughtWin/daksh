@@ -1,7 +1,7 @@
 from typing import List, Tuple
 
-from slither.core.solidity_types.type import Type
-from slither.core.variables.function_type_variable import FunctionTypeVariable
+from slither_matrix.slither.core.solidity_types.type import Type
+from slither_matrix.slither.core.variables.function_type_variable import FunctionTypeVariable
 
 
 class FunctionType(Type):

@@ -2,8 +2,8 @@
     Check that the same pragma is used in all the files
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.formatters.attributes.constant_pragma import custom_format
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.formatters.attributes.constant_pragma import custom_format
 
 
 class ConstantPragma(AbstractDetector):

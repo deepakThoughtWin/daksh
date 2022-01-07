@@ -1,11 +1,11 @@
 from typing import List, TYPE_CHECKING
 
-from slither.core.expressions.expression_typed import ExpressionTyped
+from slither_matrix.slither.core.expressions.expression_typed import ExpressionTyped
 
 
 if TYPE_CHECKING:
-    from slither.core.expressions.expression import Expression
-    from slither.core.solidity_types.type import Type
+    from slither_matrix.slither.core.expressions.expression import Expression
+    from slither_matrix.slither.core.solidity_types.type import Type
 
 
 class IndexAccess(ExpressionTyped):

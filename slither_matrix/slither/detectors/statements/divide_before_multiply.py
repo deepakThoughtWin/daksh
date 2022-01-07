@@ -2,9 +2,9 @@
 Module detecting possible loss of precision due to divide before multiple
 """
 from collections import defaultdict
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import Binary, Assignment, BinaryType, LibraryCall
-from slither.slithir.variables import Constant
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import Binary, Assignment, BinaryType, LibraryCall
+from slither_matrix.slither.slithir.variables import Constant
 
 
 def is_division(ir):

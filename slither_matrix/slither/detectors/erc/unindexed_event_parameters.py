@@ -1,7 +1,7 @@
 """
 Detect mistakenly un-indexed ERC20 event parameters
 """
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
 
 
 class UnindexedERC20EventParameters(AbstractDetector):

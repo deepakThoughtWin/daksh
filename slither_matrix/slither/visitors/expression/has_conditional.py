@@ -1,4 +1,4 @@
-from slither.visitors.expression.expression import ExpressionVisitor
+from slither_matrix.slither.visitors.expression.expression import ExpressionVisitor
 
 
 class HasConditional(ExpressionVisitor):

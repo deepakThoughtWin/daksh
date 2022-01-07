@@ -2,14 +2,14 @@
 Module detecting storage signed integer array bug
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.core.cfg.node import NodeType
-from slither.core.solidity_types import ArrayType
-from slither.core.solidity_types.elementary_type import Int, ElementaryType
-from slither.core.variables.local_variable import LocalVariable
-from slither.core.variables.state_variable import StateVariable
-from slither.slithir.operations.assignment import Assignment
-from slither.slithir.operations.init_array import InitArray
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.core.cfg.node import NodeType
+from slither_matrix.slither.core.solidity_types import ArrayType
+from slither_matrix.slither.core.solidity_types.elementary_type import Int, ElementaryType
+from slither_matrix.slither.core.variables.local_variable import LocalVariable
+from slither_matrix.slither.core.variables.state_variable import StateVariable
+from slither_matrix.slither.slithir.operations.assignment import Assignment
+from slither_matrix.slither.slithir.operations.init_array import InitArray
 
 vulnerable_solc_versions = [
     "0.4.7",

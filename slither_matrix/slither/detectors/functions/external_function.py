@@ -1,7 +1,7 @@
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import SolidityCall
-from slither.slithir.operations import InternalCall, InternalDynamicCall
-from slither.formatters.functions.external_function import custom_format
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import SolidityCall
+from slither_matrix.slither.slithir.operations import InternalCall, InternalDynamicCall
+from slither_matrix.slither.formatters.functions.external_function import custom_format
 
 
 class ExternalFunction(AbstractDetector):

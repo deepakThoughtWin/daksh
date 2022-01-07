@@ -1,23 +1,23 @@
 import logging
 from typing import Any
 
-from slither.core.expressions.assignment_operation import AssignmentOperation
-from slither.core.expressions.binary_operation import BinaryOperation
-from slither.core.expressions.call_expression import CallExpression
-from slither.core.expressions.conditional_expression import ConditionalExpression
-from slither.core.expressions.elementary_type_name_expression import ElementaryTypeNameExpression
-from slither.core.expressions.expression import Expression
-from slither.core.expressions.identifier import Identifier
-from slither.core.expressions.index_access import IndexAccess
-from slither.core.expressions.literal import Literal
-from slither.core.expressions.member_access import MemberAccess
-from slither.core.expressions.new_array import NewArray
-from slither.core.expressions.new_contract import NewContract
-from slither.core.expressions.new_elementary_type import NewElementaryType
-from slither.core.expressions.tuple_expression import TupleExpression
-from slither.core.expressions.type_conversion import TypeConversion
-from slither.core.expressions.unary_operation import UnaryOperation
-from slither.exceptions import SlitherError
+from slither_matrix.slither.core.expressions.assignment_operation import AssignmentOperation
+from slither_matrix.slither.core.expressions.binary_operation import BinaryOperation
+from slither_matrix.slither.core.expressions.call_expression import CallExpression
+from slither_matrix.slither.core.expressions.conditional_expression import ConditionalExpression
+from slither_matrix.slither.core.expressions.elementary_type_name_expression import ElementaryTypeNameExpression
+from slither_matrix.slither.core.expressions.expression import Expression
+from slither_matrix.slither.core.expressions.identifier import Identifier
+from slither_matrix.slither.core.expressions.index_access import IndexAccess
+from slither_matrix.slither.core.expressions.literal import Literal
+from slither_matrix.slither.core.expressions.member_access import MemberAccess
+from slither_matrix.slither.core.expressions.new_array import NewArray
+from slither_matrix.slither.core.expressions.new_contract import NewContract
+from slither_matrix.slither.core.expressions.new_elementary_type import NewElementaryType
+from slither_matrix.slither.core.expressions.tuple_expression import TupleExpression
+from slither_matrix.slither.core.expressions.type_conversion import TypeConversion
+from slither_matrix.slither.core.expressions.unary_operation import UnaryOperation
+from slither_matrix.slither.exceptions import SlitherError
 
 logger = logging.getLogger("ExpressionVisitor")
 

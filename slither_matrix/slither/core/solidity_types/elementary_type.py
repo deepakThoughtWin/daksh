@@ -1,11 +1,11 @@
 import itertools
 from typing import Optional, Tuple
 
-from slither.core.solidity_types.type import Type
+from slither_matrix.slither.core.solidity_types.type import Type
 
 
 # see https://solidity.readthedocs.io/en/v0.4.24/miscellaneous.html?highlight=grammar
-from slither.exceptions import SlitherException
+from slither_matrix.slither.exceptions import SlitherException
 
 Int = [
     "int",

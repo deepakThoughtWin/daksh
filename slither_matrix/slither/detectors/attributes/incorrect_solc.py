@@ -3,8 +3,8 @@
 """
 
 import re
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.formatters.attributes.incorrect_solc import custom_format
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.formatters.attributes.incorrect_solc import custom_format
 
 # group:
 # 0: ^ > >= < <= (optional)

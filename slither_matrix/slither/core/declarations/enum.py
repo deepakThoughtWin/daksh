@@ -1,6 +1,6 @@
 from typing import List
 
-from slither.core.source_mapping.source_mapping import SourceMapping
+from slither_matrix.slither.core.source_mapping.source_mapping import SourceMapping
 
 
 class Enum(SourceMapping):

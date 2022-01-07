@@ -3,12 +3,12 @@
 """
 from typing import TYPE_CHECKING, Dict
 
-from slither.core.declarations.structure import Structure
-from slither.core.variables.structure_variable import StructureVariable
-from slither.solc_parsing.variables.structure_variable import StructureVariableSolc
+from slither_matrix.slither.core.declarations.structure import Structure
+from slither_matrix.slither.core.variables.structure_variable import StructureVariable
+from slither_matrix.slither.solc_parsing.variables.structure_variable import StructureVariableSolc
 
 if TYPE_CHECKING:
-    from slither.solc_parsing.slither_compilation_unit_solc import SlitherCompilationUnitSolc
+    from slither_matrix.slither.solc_parsing.slither_compilation_unit_solc import SlitherCompilationUnitSolc
 
 
 class StructureTopLevelSolc:  # pylint: disable=too-few-public-methods

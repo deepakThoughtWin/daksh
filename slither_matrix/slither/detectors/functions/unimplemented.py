@@ -8,7 +8,7 @@ Consider public state variables as implemented functions
 Do not consider fallback function or constructor
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
 
 # Since 0.5.1, Solidity allows creating state variable matching a function signature.
 older_solc_versions = ["0.5.0"] + ["0.4." + str(x) for x in range(0, 27)]

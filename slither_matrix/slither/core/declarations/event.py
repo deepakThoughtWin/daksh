@@ -1,11 +1,11 @@
 from typing import List, Tuple, TYPE_CHECKING
 
-from slither.core.children.child_contract import ChildContract
-from slither.core.source_mapping.source_mapping import SourceMapping
-from slither.core.variables.event_variable import EventVariable
+from slither_matrix.slither.core.children.child_contract import ChildContract
+from slither_matrix.slither.core.source_mapping.source_mapping import SourceMapping
+from slither_matrix.slither.core.variables.event_variable import EventVariable
 
 if TYPE_CHECKING:
-    from slither.core.declarations import Contract
+    from slither_matrix.slither.core.declarations import Contract
 
 
 class Event(ChildContract, SourceMapping):

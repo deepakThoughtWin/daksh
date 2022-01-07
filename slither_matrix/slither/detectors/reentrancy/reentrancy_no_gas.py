@@ -6,9 +6,9 @@
 """
 from collections import namedtuple, defaultdict
 
-from slither.core.variables.variable import Variable
-from slither.detectors.abstract_detector import DetectorClassification
-from slither.slithir.operations import Send, Transfer, EventCall
+from slither_matrix.slither.core.variables.variable import Variable
+from slither_matrix.slither.detectors.abstract_detector import DetectorClassification
+from slither_matrix.slither.slithir.operations import Send, Transfer, EventCall
 from .reentrancy import Reentrancy, to_hashable
 
 FindingKey = namedtuple("FindingKey", ["function", "calls", "send_eth"])

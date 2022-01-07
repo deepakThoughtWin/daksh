@@ -6,8 +6,8 @@ are in the outermost scope, they do not guarantee a revert, so a
 default value can still be returned.
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.core.cfg.node import NodeType
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.core.cfg.node import NodeType
 
 
 def is_revert(node):

@@ -3,16 +3,16 @@ import re
 from logging import Logger
 from typing import Optional, List, TYPE_CHECKING, Dict, Union, Callable
 
-from slither.core.compilation_unit import SlitherCompilationUnit
-from slither.core.declarations import Contract
-from slither.utils.colors import green, yellow, red
-from slither.formatters.exceptions import FormatImpossible
-from slither.formatters.utils.patches import apply_patch, create_diff
-from slither.utils.comparable_enum import ComparableEnum
-from slither.utils.output import Output, SupportedOutput
+from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
+from slither_matrix.slither.core.declarations import Contract
+from slither_matrix.slither.utils.colors import green, yellow, red
+from slither_matrix.slither.formatters.exceptions import FormatImpossible
+from slither_matrix.slither.formatters.utils.patches import apply_patch, create_diff
+from slither_matrix.slither.utils.comparable_enum import ComparableEnum
+from slither_matrix.slither.utils.output import Output, SupportedOutput
 
 if TYPE_CHECKING:
-    from slither import Slither
+    from slither_matrix.slither import Slither
 
 
 class IncorrectDetectorInitialization(Exception):

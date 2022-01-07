@@ -1,5 +1,5 @@
-from slither.core.expressions.expression import Expression
-from slither.core.solidity_types.elementary_type import ElementaryType
+from slither_matrix.slither.core.expressions.expression import Expression
+from slither_matrix.slither.core.solidity_types.elementary_type import ElementaryType
 
 
 class NewElementaryType(Expression):

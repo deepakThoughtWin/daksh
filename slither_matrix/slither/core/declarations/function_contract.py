@@ -3,14 +3,14 @@
 """
 from typing import TYPE_CHECKING, List, Tuple
 
-from slither.core.children.child_contract import ChildContract
-from slither.core.children.child_inheritance import ChildInheritance
-from slither.core.declarations import Function
+from slither_matrix.slither.core.children.child_contract import ChildContract
+from slither_matrix.slither.core.children.child_inheritance import ChildInheritance
+from slither_matrix.slither.core.declarations import Function
 
 # pylint: disable=import-outside-toplevel,too-many-instance-attributes,too-many-statements,too-many-lines
 
 if TYPE_CHECKING:
-    from slither.core.declarations import Contract
+    from slither_matrix.slither.core.declarations import Contract
 
 
 class FunctionContract(Function, ChildContract, ChildInheritance):
@@ -92,8 +92,8 @@ class FunctionContract(Function, ChildContract, ChildInheritance):
     ###################################################################################
 
     def generate_slithir_ssa(self, all_ssa_state_variables_instances):
-        from slither.slithir.utils.ssa import add_ssa_ir, transform_slithir_vars_to_ssa
-        from slither.core.dominators.utils import (
+        from slither_matrix.slither.slithir.utils.ssa import add_ssa_ir, transform_slithir_vars_to_ssa
+        from slither_matrix.slither.core.dominators.utils import (
             compute_dominance_frontier,
             compute_dominators,
         )

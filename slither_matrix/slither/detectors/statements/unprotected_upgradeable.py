@@ -1,8 +1,8 @@
 from typing import List
 
-from slither.core.declarations import SolidityFunction, Function
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import LowLevelCall, SolidityCall
+from slither_matrix.slither.core.declarations import SolidityFunction, Function
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import LowLevelCall, SolidityCall
 
 
 def _can_be_destroyed(contract) -> List[Function]:

@@ -1,39 +1,39 @@
 import logging
 from typing import Dict, Optional, Union, List, TYPE_CHECKING
 
-from slither.core.cfg.node import NodeType, link_nodes, insert_node, Node
-from slither.core.cfg.scope import Scope
-from slither.core.declarations.contract import Contract
-from slither.core.declarations.function import (
+from slither_matrix.slither.core.cfg.node import NodeType, link_nodes, insert_node, Node
+from slither_matrix.slither.core.cfg.scope import Scope
+from slither_matrix.slither.core.declarations.contract import Contract
+from slither_matrix.slither.core.declarations.function import (
     Function,
     ModifierStatements,
     FunctionType,
 )
-from slither.core.declarations.function_contract import FunctionContract
+from slither_matrix.slither.core.declarations.function_contract import FunctionContract
 
-from slither.core.expressions import AssignmentOperation
-from slither.core.variables.local_variable import LocalVariable
-from slither.core.variables.local_variable_init_from_tuple import LocalVariableInitFromTuple
+from slither_matrix.slither.core.expressions import AssignmentOperation
+from slither_matrix.slither.core.variables.local_variable import LocalVariable
+from slither_matrix.slither.core.variables.local_variable_init_from_tuple import LocalVariableInitFromTuple
 
-from slither.solc_parsing.cfg.node import NodeSolc
-from slither.solc_parsing.expressions.expression_parsing import parse_expression
-from slither.solc_parsing.variables.local_variable import LocalVariableSolc
-from slither.solc_parsing.variables.local_variable_init_from_tuple import (
+from slither_matrix.slither.solc_parsing.cfg.node import NodeSolc
+from slither_matrix.slither.solc_parsing.expressions.expression_parsing import parse_expression
+from slither_matrix.slither.solc_parsing.variables.local_variable import LocalVariableSolc
+from slither_matrix.slither.solc_parsing.variables.local_variable_init_from_tuple import (
     LocalVariableInitFromTupleSolc,
 )
-from slither.solc_parsing.variables.variable_declaration import MultipleVariablesDeclaration
-from slither.solc_parsing.yul.parse_yul import YulBlock
-from slither.utils.expression_manipulations import SplitTernaryExpression
-from slither.visitors.expression.export_values import ExportValues
-from slither.visitors.expression.has_conditional import HasConditional
-from slither.solc_parsing.exceptions import ParsingError
+from slither_matrix.slither.solc_parsing.variables.variable_declaration import MultipleVariablesDeclaration
+from slither_matrix.slither.solc_parsing.yul.parse_yul import YulBlock
+from slither_matrix.slither.utils.expression_manipulations import SplitTernaryExpression
+from slither_matrix.slither.visitors.expression.export_values import ExportValues
+from slither_matrix.slither.visitors.expression.has_conditional import HasConditional
+from slither_matrix.slither.solc_parsing.exceptions import ParsingError
 
 if TYPE_CHECKING:
-    from slither.core.expressions.expression import Expression
-    from slither.solc_parsing.declarations.contract import ContractSolc
-    from slither.solc_parsing.slither_compilation_unit_solc import SlitherCompilationUnitSolc
-    from slither.core.slither_core import SlitherCore
-    from slither.core.compilation_unit import SlitherCompilationUnit
+    from slither_matrix.slither.core.expressions.expression import Expression
+    from slither_matrix.slither.solc_parsing.declarations.contract import ContractSolc
+    from slither_matrix.slither.solc_parsing.slither_compilation_unit_solc import SlitherCompilationUnitSolc
+    from slither_matrix.slither.core.slither_core import SlitherCore
+    from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
 
 
 LOGGER = logging.getLogger("FunctionSolc")

@@ -1,5 +1,5 @@
-from slither.core.declarations.solidity_variables import SOLIDITY_FUNCTIONS
-from slither.core.expressions import BinaryOperationType, UnaryOperationType
+from slither_matrix.slither.core.declarations.solidity_variables import SOLIDITY_FUNCTIONS
+from slither_matrix.slither.core.expressions import BinaryOperationType, UnaryOperationType
 
 # taken from https://github.com/ethereum/solidity/blob/356cc91084114f840da66804b2a9fc1ac2846cff/libevmasm/Instruction.cpp#L180
 evm_opcodes = [

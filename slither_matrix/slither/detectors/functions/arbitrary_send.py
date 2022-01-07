@@ -11,15 +11,15 @@
 """
 from typing import List
 
-from slither.core.cfg.node import Node
-from slither.core.declarations import Function, Contract
-from slither.analyses.data_dependency.data_dependency import is_tainted, is_dependent
-from slither.core.declarations.solidity_variables import (
+from slither_matrix.slither.core.cfg.node import Node
+from slither_matrix.slither.core.declarations import Function, Contract
+from slither_matrix.slither.analyses.data_dependency.data_dependency import is_tainted, is_dependent
+from slither_matrix.slither.core.declarations.solidity_variables import (
     SolidityFunction,
     SolidityVariableComposed,
 )
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.operations import (
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.operations import (
     HighLevelCall,
     Index,
     LowLevelCall,
@@ -30,7 +30,7 @@ from slither.slithir.operations import (
 
 
 # pylint: disable=too-many-nested-blocks,too-many-branches
-from slither.utils.output import Output
+from slither_matrix.slither.utils.output import Output
 
 
 def arbitrary_send(func: Function):

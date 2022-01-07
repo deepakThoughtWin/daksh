@@ -1,7 +1,7 @@
 from collections import defaultdict
 
-from slither.core.compilation_unit import SlitherCompilationUnit
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.core.compilation_unit import SlitherCompilationUnit
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
 
 
 def _find_missing_inheritance(compilation_unit: SlitherCompilationUnit):

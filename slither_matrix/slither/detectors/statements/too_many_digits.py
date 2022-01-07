@@ -2,8 +2,8 @@
 Module detecting numbers with too many digits.
 """
 
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
-from slither.slithir.variables import Constant
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.slithir.variables import Constant
 
 
 class TooManyDigits(AbstractDetector):

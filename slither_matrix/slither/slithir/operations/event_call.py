@@ -1,4 +1,4 @@
-from slither.slithir.operations.call import Call
+from slither_matrix.slither.slithir.operations.call import Call
 
 
 class EventCall(Call):

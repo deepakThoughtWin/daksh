@@ -1,5 +1,5 @@
-from utils import run_command
-from ast_walker import AstWalker
+from oyente_matrix.oyente.utils import run_command
+from oyente_matrix.oyente.ast_walker import AstWalker
 import json
 
 class AstHelper:

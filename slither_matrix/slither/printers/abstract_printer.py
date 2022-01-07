@@ -1,6 +1,6 @@
 import abc
 
-from slither.utils import output
+from slither_matrix.slither.utils import output
 
 
 class IncorrectPrinterInitialization(Exception):

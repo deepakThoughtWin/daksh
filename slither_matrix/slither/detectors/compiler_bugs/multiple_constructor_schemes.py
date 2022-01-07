@@ -1,4 +1,4 @@
-from slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
+from slither_matrix.slither.detectors.abstract_detector import AbstractDetector, DetectorClassification
 
 
 class MultipleConstructorSchemes(AbstractDetector):

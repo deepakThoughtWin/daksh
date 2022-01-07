@@ -1,5 +1,5 @@
-from slither.slithir.operations.lvalue import OperationWithLValue
-from slither.core.solidity_types.type import Type
+from slither_matrix.slither.slithir.operations.lvalue import OperationWithLValue
+from slither_matrix.slither.core.solidity_types.type import Type
 
 
 class TmpNewArray(OperationWithLValue):

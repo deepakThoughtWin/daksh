@@ -1,6 +1,6 @@
 from typing import Optional, TYPE_CHECKING
 
-from slither.core.expressions.expression import Expression
+from slither_matrix.slither.core.expressions.expression import Expression
 
 if TYPE_CHECKING:
     from slither.core.solidity_types.type import Type
